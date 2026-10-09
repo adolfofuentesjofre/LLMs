@@ -1,0 +1,81 @@
+{
+  "response_contract": [
+    {
+      "answer": "A"
+    },
+    {
+      "answer": "B"
+    }
+  ],
+  "display_order_decoding": {
+    "original": {
+      "A": "original_A",
+      "B": "original_B"
+    },
+    "inverted": {
+      "A": "original_B",
+      "B": "original_A"
+    }
+  },
+  "countries": {
+    "chile": {
+      "year": 2019,
+      "language": "Spanish",
+      "self_placement_bare": "- Autoubicación política: {value}/10",
+      "self_placement_anchored": "- Autoubicación política: {value}/10 (1 = izquierda; 10 = derecha).",
+      "question": "¿Qué priorizarías?"
+    },
+    "france": {
+      "year": 2022,
+      "language": "French",
+      "self_placement_bare": "- Auto-positionnement politique : {value}/5",
+      "self_placement_anchored": "- Auto-positionnement politique : {value}/5 (1 = gauche ; 5 = droite).",
+      "question": "Quelle proposition préférez-vous ?"
+    },
+    "brazil": {
+      "year": 2022,
+      "language": "Portuguese",
+      "self_placement_bare": "- Autoposicionamento político: {value}/5",
+      "self_placement_anchored": "- Autoposicionamento político: {value}/5 (1 = esquerda; 5 = direita).",
+      "question": "Qual proposta você prefere?"
+    }
+  },
+  "factorial": {
+    "self_placement": [
+      "present",
+      "ablated"
+    ],
+    "display_order": [
+      "original",
+      "inverted"
+    ],
+    "anchored_probe": [
+      "bare_numeric",
+      "verbal_endpoints"
+    ]
+  },
+  "sequential_memory": {
+    "schema": "episodic_jsonl_v1",
+    "event_fields": [
+      "event_index",
+      "option_a",
+      "option_b",
+      "model_choice"
+    ],
+    "ordering": "oldest_to_newest",
+    "decision_1": "exact stateless prompt",
+    "prohibited_fields": [
+      "human_choice",
+      "participant_identifier",
+      "coordinates",
+      "reflection",
+      "summary"
+    ]
+  },
+  "default_decoding": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_output_tokens": 12,
+    "reasoning": "off"
+  }
+}

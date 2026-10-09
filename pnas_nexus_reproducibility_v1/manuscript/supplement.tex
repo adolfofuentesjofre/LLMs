@@ -1,0 +1,742 @@
+% Supporting Information -- select this file as the main document to compile SI.
+\documentclass[unnumsec,webpdf,modern,large]{oup-authoring-template}
+\usepackage{xurl}
+\usepackage{booktabs}
+\providecommand{\societylogo}{}
+\newenvironment{prompttemplate}{%
+  \par\begingroup\normalsize\raggedright\sloppy
+  \setlength{\parindent}{0pt}\setlength{\parskip}{0pt}\obeylines
+}{%
+  \par\endgroup
+}
+\graphicspath{{figures/}}
+\journaltitle{PNAS Nexus}
+\DOI{DOI added during production}
+\copyrightyear{2026}
+\pubyear{2026}
+\appnotes{Supporting Information}
+
+\title[Language models compress human preference geometry while political structure remains prompt-sensitive]{Language models compress human preference geometry while political structure remains prompt-sensitive}
+
+
+\title[Supporting Information]{Supporting Information for ``Language models compress human preference geometry while political structure remains prompt-sensitive''}
+
+\author[1,2,$\ast$]{Adolfo Ignacio Fuentes-Jofre}
+\author[1,2,3,$\ast$]{Cristian Candia}
+
+\address[1]{\orgdiv{Computational Research in Social Science Laboratory},
+\orgname{School of Engineering, Universidad del Desarrollo},
+\orgaddress{Las Condes, \postcode{7610658}, \country{Chile}}}
+\address[2]{\orgdiv{Instituto de Data Science, Facultad de Ingenier\'ia},
+\orgname{Universidad del Desarrollo},
+\orgaddress{Las Condes, \postcode{7610658}, \country{Chile}}}
+\address[3]{\orgdiv{Northwestern Institute on Complex Systems (NICO)},
+\orgname{Northwestern University},
+\orgaddress{Evanston, \state{IL}, \postcode{60208}, \country{USA}}}
+\corresp[$\ast$]{Corresponding authors: Adolfo Ignacio Fuentes Jofr\'e, adolfo.fuentes.j@gmail.com; Cristian Candia, crcandiav@gmail.com.}
+
+
+\abstract{}
+
+\begin{document}
+\maketitle
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+
+\section{Supplementary methods}
+
+This Supporting Information documents the complete model grid and factorial cells, the country-specific preprocessing and estimands, and the sensitivity analyses that delimit the main-text claims. The prompt-sensitive political organization reported in the main text is supported by the endpoint-anchor diagnostic, classification tables, aggregate proposal-space validation, and political-cleavage analysis below. DYNAMAP (Dynamic System for Mapping of Users and Their Preferences Using Artificial Intelligence) is the neural comparative-choice model used throughout. The SI preserves seven criteria: internal DYNAMAP reconstruction, matched human agreement, self-placement recoverability, position stability, participant geometry, proposal topology, and political cleavage.
+
+\subsection{Chilean fixed sample and unit of analysis}
+
+Data preparation preserved a full integrated choice table, an eligibility-filtered table, a fixed replay frame, and a confirmed-adult analysis manifest. The source contained 3,007,714 pairwise choices from 48,119 anonymous participant identifiers (UUIDs) over 90 policy proposals. Eligibility required one profile row, recorded political self-placement on the original 1--10 scale, age in the archived 0--110 range, at least 20 eligible political decisions, and no record-level exclusion flag. The eligible pool contained 31,763 UUIDs and 2,311,464 choices. Sampling without replacement used NumPy seed 20260821 and drew a fixed frame of 2,000 UUIDs. The confirmed-adult cohort retained the 1,991 frame members with an exact reported age of at least 18 and their first 20 eligible choices in chronological order, yielding exactly 39,820 matched cells. The survey coding defined 1--4 as left, 5 as center, and 6--10 as right. The 835 midpoint participants were excluded only from binary left--right analyses; all 1,991 confirmed adults remained in behavioral, reconstruction, and geometry analyses. The 2,000-person frame is reported only to document cohort construction; unless explicitly labeled as a bootstrap or estimator count, every reported sample size and estimate below refers to a confirmed-adult cohort.
+
+The decision cell is the descriptive comparison unit, but behavioral uncertainty resamples UUIDs and retains all 20 repeated decisions. The coordinate-validation label is defined at the UUID level. No UUID, observed human response, timestamp, learned coordinate, or proposal popularity statistic entered a model prompt.
+
+\subsection{Chilean persona and response contract}
+
+The prompt was in Spanish and fixed across the 27-condition model grid. The system message specified that the respondent was choosing between two public-policy proposals in Chile in 2019, instructed the model to use only the supplied profile, prohibited invented attributes and information after 2019, required a single choice, and prohibited explanation. The user message supplied recorded sex, age, political self-placement, and the exact original texts of options A and B. The response contract admitted only A or B in the archived structured format. Reasoning was disabled.
+
+This profile is sparse. It omits education, income, occupation, religion, locality, family context, life history, and prior behavior. Among the 1,991 Chilean confirmed adults there were 607 distinct recorded sex--age--self-placement profiles, and 87.24\% shared that profile with at least one other participant. Sparse personas can mechanically limit model-based heterogeneity because a deterministic response is a function of the visible profile and displayed pair. At the same time, participants sharing a profile generally received different 20-pair sequences, so within-profile coordinate variation also contains item-composition variation. The present design therefore cannot identify a strict persona-based ceiling or cleanly decompose preference heterogeneity from sequence composition; doing so would require balanced repeated items within identical profiles. The design evaluates a controlled prompt-to-response mapping rather than psychological identification with a person. Downstream self-placement classification measures consistent use of a supplied attribute, not emergent inference about an unobserved orientation.
+
+\subsection{Verbatim prompt templates}
+
+The following templates reproduce the archived messages. Bracketed terms replace row-specific values or proposal text; they were not shown literally. The self-placement-ablated arm deleted only the corresponding self-placement line. The inverted arm exchanged both proposal texts and their A/B positions. The response contract was unchanged.
+
+\paragraph{Chile (Spanish).}
+\begin{prompttemplate}
+SYSTEM
+Estás simulando una decisión individual en un estudio de preferencias de política pública realizado en Chile en 2019.
+Adopta únicamente el perfil proporcionado y sitúa tu decisión en ese momento temporal.
+No inventes otros rasgos, experiencias o preferencias.
+No bases tu decisión en acontecimientos o información posteriores a 2019.
+Debes elegir exactamente una de las dos alternativas. No hay empate.
+No expliques ni justifiques tu decisión.
+
+USER
+Perfil de la persona:
+- Edad: [edad]
+- Sexo: [sexo]
+- Autoubicación política: [valor]/10
+
+Pregunta original:
+¿Qué priorizarías?
+A: [texto de la propuesta A]
+B: [texto de la propuesta B]
+
+Devuelve exactamente uno de estos objetos JSON:
+\{"answer":"A"\}
+\{"answer":"B"\}
+\end{prompttemplate}
+
+\paragraph{France (French).}
+\begin{prompttemplate}
+SYSTEM
+Vous simulez une décision individuelle dans une étude sur les préférences en matière de politiques publiques menée en France lors de l’élection présidentielle de 2022.
+Adoptez uniquement le profil fourni et situez votre décision dans ce contexte temporel.
+N’inventez pas d’autres caractéristiques, expériences ou préférences.
+Ne fondez pas votre décision sur des événements ou des informations postérieurs à 2022.
+Vous devez choisir exactement l’une des deux options. Il n’y a pas d’égalité.
+N’expliquez ni ne justifiez votre décision.
+
+USER
+Profil de la personne :
+- Tranche d’âge : [tranche d’âge]
+- Sexe : [sexe]
+- Auto-positionnement politique : [valeur]/5
+
+Question originale :
+Quelle proposition préférez-vous ?
+A : [texte de la proposition A]
+B : [texte de la proposition B]
+
+Renvoyez exactement l’un de ces objets JSON :
+\{"answer":"A"\}
+\{"answer":"B"\}
+\end{prompttemplate}
+
+\paragraph{Brazil (Brazilian Portuguese).}
+\begin{prompttemplate}
+SYSTEM
+Você está simulando uma decisão individual em um estudo de preferências de políticas públicas realizado no Brasil durante a eleição presidencial de 2022.
+Adote apenas o perfil fornecido e situe sua decisão nesse contexto temporal.
+Não invente outras características, experiências ou preferências.
+Não baseie sua decisão em acontecimentos ou informações posteriores a 2022.
+Você deve escolher exatamente uma das duas opções. Não há empate.
+Não explique nem justifique sua decisão.
+
+USER
+Perfil da pessoa:
+- Faixa etária: [faixa etária]
+- Sexo: [sexo]
+- Autoposicionamento político: [valor]/5
+
+Pergunta original:
+Qual proposta você prefere?
+A: [texto da proposta A]
+B: [texto da proposta B]
+
+Retorne exatamente um destes objetos JSON:
+\{"answer":"A"\}
+\{"answer":"B"\}
+\end{prompttemplate}
+
+\paragraph{Verbal endpoint-anchor variant.}
+The later mechanism probe changed only the self-placement line in these templates. The replacement text was \emph{Autoubicaci\'on pol\'itica: [valor]/10 (1 = extrema izquierda; 10 = extrema derecha)} in Chile, \emph{Auto-positionnement politique : [valeur]/5 (1 = extr\^{e}me gauche ; 5 = extr\^{e}me droite)} in France, and \emph{Autoposicionamento pol\'itico: [valor]/5 (1 = extrema esquerda; 5 = extrema direita)} in Brazil. No intermediate categories, substantive interpretation, or additional persona information was added.
+
+\subsection{Model grid and serving provenance}
+
+The grid crosses nine open-weight checkpoints with $T\in\{0,0.2,0.7\}$; Table~\ref{tab:s_models} gives their exact identifiers and serving specifications. Open-weight checkpoints permit immutable revisions and local inference settings to be fixed for exact replay; hosted proprietary systems are outside this design. Top-$p$ was 1.0. Stochastic conditions use the archived run-level sampling seed; temperature-zero runs have no effective sampling seed. Within every checkpoint, repository revision and inference-engine version are identical across temperatures. Qwen3 and Gemma 4 use bfloat16 weights and computation; Ministral 3 uses native FP8 weights with bfloat16 computation. Family and size comparisons therefore describe the deployed checkpoints and are not controlled causal effects of architecture or parameter count. One response was generated per participant--decision cell, so temperature probes decoding sensitivity rather than a respondent-level distribution or human heterogeneity.
+
+\begin{table*}[t]
+\caption{Exact checkpoint and serving specifications. Repository revisions are immutable commit identifiers. All three temperatures were completed for each row.}
+\label{tab:s_models}
+\centering
+\scriptsize
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lllllll}
+\toprule
+Family & Size & Model identifier & Revision & Engine & Precision & Quantization \\
+\midrule
+Qwen3 & 8B & \texttt{Qwen/Qwen3-8B} & \texttt{b968826d9c46dd6066d109eabc6255188de91218} & vLLM 0.21.0 & bfloat16 & none \\
+Qwen3 & 14B & \texttt{Qwen/Qwen3-14B} & \texttt{40c069824f4251a91eefaf281ebe4c544efd3e18} & vLLM 0.21.0 & bfloat16 & none \\
+Qwen3 & 32B & \texttt{Qwen/Qwen3-32B} & \texttt{9216db5781bf21249d130ec9da846c4624c16137} & vLLM 0.21.0 & bfloat16 & none \\
+Gemma 4 & E4B & \texttt{google/gemma-4-E4B-it} & \texttt{ee0ef6023621cff504d758262d4e04895a5af4a2} & vLLM 0.28.0 & bfloat16 & none \\
+Gemma 4 & 12B & \texttt{google/gemma-4-12B-it} & \texttt{707f0a3b8a3c7ad586ed01e27eafbad8a27dd0f7} & vLLM 0.28.0 & bfloat16 & none \\
+Gemma 4 & 31B & \texttt{google/gemma-4-31B-it} & \texttt{842da3794eaa0b77d5f08bae87a17459d91ff475} & vLLM 0.28.0 & bfloat16 & none \\
+Ministral 3 & 3B & \texttt{mistralai/Ministral-3-3B-Instruct-2512} & \texttt{b35d4dfe56c142746f54dbd64f579faab2744308} & vLLM 0.28.0 & bfloat16 & native FP8 weights \\
+Ministral 3 & 8B & \texttt{mistralai/Ministral-3-8B-Instruct-2512} & \texttt{5b26027e7b19eeb4b7352e1fed3926375dd2cb4d} & vLLM 0.28.0 & bfloat16 & native FP8 weights \\
+Ministral 3 & 14B & \texttt{mistralai/Ministral-3-14B-Instruct-2512} & \texttt{29439f81c2be264d8d393273f99e7db9c0961120} & vLLM 0.28.0 & bfloat16 & native FP8 weights \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}
+
+\subsection{DYNAMAP architecture and validation} \label{sec:dynamap_architecture}
+
+For each response source, DYNAMAP jointly learns two-dimensional participant and proposal coordinates from repeated pairwise choices. Let $\mathbf{u}_i \in (0,1)^d$ denote the coordinate of participant $i$ and $\mathbf{v}_a,\mathbf{v}_b \in (0,1)^d$ those of the two proposals, with $d=2$ in all analyses. Trainable participant and proposal embedding tables are transformed componentwise by a sigmoid, constraining all coordinates to the unit square.
+
+The baseline choice function uses a flexible shared-parameter head rather than a monotonic Euclidean-distance rule. For each participant -proposal pair, it first computes elementwise squared displacements
+\[
+\boldsymbol{\delta}_{ia}
+=
+(\mathbf{v}_a-\mathbf{u}_i)\odot
+(\mathbf{v}_a-\mathbf{u}_i),
+\qquad
+\boldsymbol{\delta}_{ib}
+=
+(\mathbf{v}_b-\mathbf{u}_i)\odot
+(\mathbf{v}_b-\mathbf{u}_i).
+\]
+
+These vectors are not summed into scalar Euclidean distances before entering the choice head. Instead, the same learned transformation is applied to both alternatives:
+\[
+\mathbf{h}_{ia}
+=
+\exp(\boldsymbol{\delta}_{ia}\mathbf{W}_1+\mathbf{b}_1),
+\qquad
+\mathbf{h}_{ib}
+=
+\exp(\boldsymbol{\delta}_{ib}\mathbf{W}_1+\mathbf{b}_1),
+\]
+where $\mathbf{W}_1\in\mathbb{R}^{d\times4}$, yielding four hidden components per alternative and eight after concatenation. A second shared transformation produces one scalar per alternative,
+\[
+r_{ia}=\exp(\mathbf{h}_{ia}\mathbf{w}_2+b_2),
+\qquad
+r_{ib}=\exp(\mathbf{h}_{ib}\mathbf{w}_2+b_2),
+\]
+and an unconstrained one-unit dense output layer gives
+\[
+\widehat P(A\mid i,a,b)
+=
+\sigma(\alpha_A r_{ia}+\alpha_B r_{ib}+c).
+\]
+The training target is one when the displayed proposal A was selected and zero when B was selected. Thus, although the intermediate alternative-specific transformations share parameters, the baseline architecture does not structurally require the closer proposal in Euclidean distance to be preferred, nor does it impose exact A/B-swap antisymmetry on the predicted choice probability.
+
+All conditions were optimized with binary cross-entropy and Adamax (learning rate 0.01), batch size 64, 20 epochs, and initialization seed 101. The same architecture and estimation settings were used for human and synthetic response sources within each comparison.
+
+
+Decisions 1--18 per UUID form the training data and decisions 19--20 form validation (35,838 and 3,982 rows). Both partitions contain the same people and proposal universe. DYNAMAP accuracy is therefore internal reconstruction for observed users and items. The majority baseline is computed separately within each condition's validation labels, and lift is DYNAMAP minus that baseline. Accuracy and lift are deterministic validation-set point diagnostics conditional on a fitted network; the 30-seed analysis separately quantifies optimization sensitivity, and no participant-sampling confidence interval is claimed for these diagnostics.
+
+\subsection{Political self-placement validation}
+
+The Chilean midpoint 5 was omitted from binary validation, leaving 653 UUIDs at 1--4 and 503 at 6--10. The majority class is therefore 0.565 of the binary adult cohort. Random forests used 2,000 trees, entropy splits, and seed 42. The sociodemographic specification used age, recorded sex, and archived region code; the augmented specification added the two DYNAMAP coordinates. We report a fixed, unstratified 70/30 holdout and stratified 10-fold cross-validation. The fixed holdout contains 199 majority-class participants among 347 (0.573). It is retained to avoid redefining the primary estimand after results were observed; CV-10 supplies a stratified partition sensitivity. The human-coordinate reference is 0.674 held-out and 0.676 CV-10, compared with 0.516 for the sociodemographic-only held-out model. The estimand is recoverability of political self-placement from repeated choices, not matched human agreement.
+
+\subsection{Proposal-anchor alignment and geometric diagnostics}
+
+Let $P_H$ be the $90\times2$ human proposal matrix and $P_M$ a model proposal matrix. A similarity Procrustes transformation estimates rotation/reflection $R$, scalar $c$, and translation $t$ by minimizing
+\[
+\left\lVert P_H-(cP_MR+\mathbf{1}t^\top)\right\rVert_F^2.
+\]
+The fitted transformation is applied unchanged to model participant coordinates; self-placement labels do not enter alignment \citep{Schonemann1966}. Total coordinate variance is the trace of the covariance matrix across all users. Left--right separation is the Euclidean distance between left and right centroids. Proposal topology is Pearson correlation between all matched pairwise proposal distances. Variance and separation are divided by the corresponding human estimate.
+
+\subsection{Self-placement-by-position factorial intervention}
+
+Three temperature-zero checkpoints were selected from the completed grid to represent its best matched human agreement (Gemma 4-12B), held-out self-placement recoverability (Qwen3-32B), and DYNAMAP lift (Ministral 3-14B). Checkpoint selection was therefore outcome-informed. Before generating the nine new response cells, we fixed a balanced $2\times2$ intervention crossing political self-placement present versus ablated from the persona with original versus inverted proposal display. The analyzed 12 cells contain the same 1,991 confirmed-adult UUIDs and 39,820 decisions each. The stored responses were projected to the adult manifest; no inference was repeated. The three self-placement-present, original-order reference cells and their adult DYNAMAP fits were reused after exact verification.
+
+The position intervention exchanged both proposal content and displayed label: displayed A contained original proposal B and displayed B contained original proposal A. Inverted responses were decoded to original proposal identity before matched human agreement, original-A rate, DYNAMAP, self-placement validation, geometry, or rankings were computed. Displayed-A rate was retained separately as a label-position diagnostic. Cross-order stability is paired agreement between original and inverted responses after this decoding. The self-placement contrast is present minus ablated within checkpoint and display order; the position contrast is inverted minus original within checkpoint and prompt condition.
+
+All DYNAMAP and political-validation settings match the primary grid. Behavioral intervals use 2,000 bootstrap replicates resampling UUIDs with their complete 20-decision histories. Held-out classification contrasts pair the same 347 test UUIDs; CV-10 differences pair folds and are sensitivity summaries rather than independent-population intervals. Holm correction was applied separately to the six focal held-out self-placement contrasts and to the complete family of 42 behavioral self-placement contrasts. The latter comprises matched human agreement, original-A rate, displayed-A rate, decoded entropy, displayed entropy, decoded persistence, and displayed persistence, crossed with three checkpoints and two orders. It is broader because these seven behavioral diagnostics were archived as one family, whereas held-out classification contained only the six focal prompt contrasts. With 2,000 bootstrap replicates, 0.001 is the minimum attainable raw two-sided $P$; its Holm-adjusted bounds are 0.006 in a six-test family and 0.042 in a 42-test family. User-coordinate intervals resample UUIDs while holding coordinates fixed after one DYNAMAP fit, and proposal-distance intervals resample matched proposal pairs. Neither includes uncertainty from repeated neural-network fitting.
+
+\subsection{France--Brazil 2022 cross-country replication}
+
+The French and Brazilian source data were collected through an online platform around the 2022 presidential elections \citep{Navarrete2024}. Production cleaning retained a stable source index and UTC timestamp and required nonmissing UUID, proposal pair, selected item, and time; two distinct catalogue-backed proposals; a selected value equal to one of the pair; \texttt{suspicious=0}; the latest valid observation per UUID and unordered proposal pair; and the latest usable profile with political self-placement 1--5, age 1--7, and documented sex code 1--2. Age was released in bands, so the complete 10--19 category was excluded because ages 18--19 could not be separated from younger respondents. The primary confirmed-adult C20 cohorts contain 843 UUIDs and 16,860 decisions in France and 434 UUIDs and 8,680 decisions in Brazil; all 120 French and 67 Brazilian proposals remain represented. Both training comparison graphs are connected.
+
+The broader confirmed-adult C10 cohorts contain 847 UUIDs and 8,470 rows in France and 515 UUIDs and 5,150 rows in Brazil. Every C20 participant is contained within C10, and the first ten decision identities match exactly for those shared participants. C20 is primary, with decisions 1--18 for training and 19--20 for validation. C10 uses decisions 1--8/9--10. C10 changes cohort composition, history length, training volume, and held-out positions together, so it is a descriptive sensitivity rather than a causal decision-count treatment.
+
+The three focal checkpoints---Gemma 4-12B, Qwen3-32B, and Ministral 3-14B---used the same revisions and temperature-zero, stateless settings as the Chilean factorial. Country-specific prompts used native proposal text, the exact interface question (\emph{Quelle proposition pr\'{e}f\'{e}rez-vous ?} or \emph{Qual proposta voc\^{e} prefere?}), recorded political self-placement, and the 2022 temporal context. Positions 1--2 were grouped as left/center-left, 3 as center, and 4--5 as center-right/right; every scale was interpreted only within country. The $3\times2\times2$ design crossed self-placement present/ablated with original/inverted content order in each country. Across the generated union needed for C20 and C10 before the confirmed-adult restriction, France contributed 210,000 responses and Brazil 118,560, totaling 328,560. Six French catalogue entries were multichoice parent cards whose selected suboption is not recoverable; prompts conservatively used the original parent text rather than constructing an unobserved composite stimulus.
+
+Every valid released human row in both countries records the selected proposal as \texttt{option\_a}. Thus, ``original'' denotes the released file orientation, not reconstructed historical screen position. Model responses were first decoded from visible A/B to proposal identity. Each pair was then represented as lower-ID versus higher-ID proposal before DYNAMAP estimation, preventing the selected-first convention from becoming a perfect human label. Original-order human agreement alone is not interpreted as fidelity. The primary direct-agreement estimand is the equal-weight mean across the four self-placement-cue-by-order cells; paired original/inverted proposal-identity consistency is a separate position-stability estimand.
+
+All 52 French and Brazilian human or synthetic DYNAMAP fits use two dimensions, seed 101, 20 epochs, Adamax learning rate 0.01, batch size 64, and deterministic row order. Self-placement recoverability excludes midpoint 3 and uses random forests with 2,000 trees, entropy splits, seed 42, the fixed unstratified 30\% holdout, and stratified CV-10. In C20 this leaves 597 left and 137 right French participants and 301 left and 89 right Brazilian participants. The held-out majority rules are 179/221 (0.810) in France and 92/117 (0.786) in Brazil. We therefore report raw accuracy together with balanced accuracy (mean class recall), macro-F1, and ROC AUC. Proposal-anchor similarity alignment is performed within country only. UUID-bootstrap intervals use 2,000 resamples. Geometry intervals resample fixed fitted coordinates and therefore omit DYNAMAP-refitting uncertainty.
+
+\subsection{Additional robustness estimands}
+
+All primary and sensitivity estimands reported here were recomputed on the confirmed-adult manifests. Stored LLM responses were projected to those manifests; DYNAMAP and downstream statistical models were refitted on identical human and synthetic UUID sets within each country and cohort. The policy-domain analysis used the archived Chilean proposal taxonomy, retained both endpoints of cross-domain comparisons, and applied explicit minimum-coverage criteria. Delete-one-topic refits held the architecture, split, and primary initialization (seed 101) fixed and were composition diagnostics rather than proposal-population intervals.
+
+Optimization sensitivity varied only DYNAMAP initialization across 30 fixed seeds for the human C20 data and the three focal temperature-zero, self-placement-present, original-order conditions in each country. Human and synthetic spaces were refitted at the same seed before alignment. These distributions measured neural-optimization sensitivity and not LLM-generation, participant-sampling, or proposal-sampling uncertainty.
+
+Embedding-independent proposal analyses used L2-regularized Bradley--Terry logistic models without an intercept, with primary $C=1$ and $C=0.1$ and $C=10$ sensitivities \citep{Bradley1952}. Aggregate proposal summaries compared ranks, scores, pairwise orderings, and root-mean-square score dispersion. Political cleavage was estimated by fitting left and right groups separately, centering utilities within group, and defining cleavage as right-group minus left-group proposal utility. Paired participant-cluster bootstrap replicates resampled complete histories and applied identical multiplicities to human and synthetic responses. Percentile intervals summarize the central 95\% of refitted estimates; for discrete or skewed statistics, the full-sample estimate need not lie inside that central bootstrap interval.
+
+\subsection{Verbal endpoint-anchor diagnostic}
+
+The endpoint diagnostic was specified after the bare-numeric cleavage results were observed and is therefore an outcome-informed mechanism probe. It used only Qwen3-32B at temperature zero, stateless decoding, and the confirmed-adult C20 cohorts: 1,991 Chilean, 843 French, and 434 Brazilian participants. Original- and inverted-order cells were paired one-to-one with the existing bare-numeric controls. The six new inference cells contained 130,720 valid A/B responses in total. Apart from the endpoint text reproduced above, checkpoint revision, runtime, numerical format, system message, persona, temporal context, proposal IDs and text, decoding parameters, output schema, and response parser were unchanged. Inverted responses were decoded to original proposal identity before analysis.
+
+Behavioral effects and order stability used 2,000 paired UUID-cluster bootstrap replicates. Political cleavage used the same $C=1$ Bradley--Terry estimator and 2,000 paired left/right UUID-cluster bootstrap refits as the bare analysis. DYNAMAP used the same two-dimensional architecture, decisions 1--18/19--20 split, 20 epochs, and national proposal-anchor alignment as the primary analysis. Seed 101 is the manuscript-compatible point estimate. Thirty additional initialization seeds refitted bare and anchored original/inverted responses and aligned each model fit to the same-seed human fit, yielding 465 total fits across 15 series when human references and verified reused fits are included. These seed distributions quantify optimization sensitivity conditional on fixed responses; they are not participant-sampling intervals or model-generation uncertainty.
+
+\section{Chilean grid and factorial results}
+
+\subsection{Complete 27-condition results}
+
+Table~\ref{tab:s_all} reports every condition. Dyn. is raw DYNAMAP validation accuracy; Lift subtracts the condition-specific majority rule; Human is matched human agreement; Self-pl. is held-out left--right self-placement accuracy; L--R and Var. are percentages of the human reference; and $r_{dist}$ is proposal-distance correlation. These geometry values use the primary DYNAMAP initialization (seed 101). Exact unrounded estimates, CV-10 accuracy, coordinate gain, choice balance, entropy, alignment diagnostics, and bootstrap intervals accompany the table.
+
+\begin{table*}[!t]
+\caption{Complete model grid.}
+\label{tab:s_all}
+\centering
+\scriptsize
+\resizebox{\textwidth}{!}{\input{source_tables/table_all_conditions.tex}}
+\end{table*}
+
+The adult-primary criteria have distinct maxima: DYNAMAP accuracy, 0.850 (Qwen3-14B, $T=0.7$); lift, 0.268 (Gemma 4-31B, $T=0.7$); matched human agreement, 0.571 (Gemma 4-12B, $T=0$); held-out self-placement recoverability, 0.925 (Qwen3-32B, $T=0$); CV-10 recoverability, 0.912 (Qwen3-32B, $T=0$); seed-101 left--right separation, 59.4\% of human (Qwen3-32B, $T=0$); seed-101 total variance, 6.19\% of human (Qwen3-32B, $T=0$); and seed-101 proposal-distance correlation, 0.136 (Gemma 4-31B, $T=0$). Figures~\ref{fig:s_grid} and \ref{fig:s_tradeoff} visualize the complete grid and the fidelity--compression tradeoff. These point maxima are descriptive and should not be interpreted as initialization-invariant checkpoint rankings.
+
+\begin{figure*}[p]
+\centering
+\includegraphics[width=0.98\textwidth]{figureS1_model_grid_all_metrics.png}
+\caption{Nine-panel view of the complete confirmed-adult grid. Panels show raw DYNAMAP accuracy, lift over majority, matched human agreement, held-out and CV-10 political self-placement accuracy, left--right separation, total variance, proposal-distance correlation, and A-response rate. Lines connect sizes within family and temperature only to aid reading.}
+\label{fig:s_grid}
+\figalttext[Nine metric panels for 27 model conditions]{Each metric varies nonmonotonically across families and sizes. Temperature lines often cross. All variance and left-right separation points lie far below the human reference.}
+\end{figure*}
+
+\begin{figure*}[p]
+\centering
+\includegraphics[width=0.98\textwidth]{figure2_fidelity_geometry_tradeoff.pdf}
+\caption{Matched human agreement versus participant-coordinate variance relative to the confirmed-adult human reference across the complete Chilean grid. Marker shape denotes model family and color denotes temperature. Every condition remains far below the human variance reference of one.}
+\label{fig:s_tradeoff}
+\figalttext[Fidelity and participant-variance scatterplot]{Matched human agreement varies within a narrow range while every synthetic participant-coordinate variance remains far below the adult human reference.}
+\end{figure*}
+
+\subsection{Factorial intervention results}
+
+The factorial produced 12 complete adult-primary response spaces (Table~\ref{tab:s_confirm_cells}). DYNAMAP validation accuracy ranged from 0.763 to 0.827, its lift over the condition-specific majority rule from 0.130 to 0.267, matched human agreement from 0.523 to 0.598, held-out self-placement recoverability from 0.522 to 0.925, and CV-10 recoverability from 0.519 to 0.912. Figure~\ref{fig:s_confirm_metrics} places these quantities beside the aligned geometric diagnostics. The metrics do not share an optimum.
+
+\begin{table*}[!t]
+\caption{Complete confirmed-adult $3\times2\times2$ factorial. Cue denotes whether political self-placement was present or ablated. Order is the displayed proposal order; all substantive metrics for inverted cells use responses decoded to original proposal identity. Dyn. is DYNAMAP validation accuracy; Lift subtracts the validation-majority rule; Human is matched human agreement; Self-pl. and CV-10 are left--right self-placement classification accuracies; L--R and Var. are percentages of the human reference. Geometry values use the primary DYNAMAP initialization (seed 101). The 0.573 majority rule for the fixed adult holdout contextualizes the ablated cells.}
+\label{tab:s_confirm_cells}
+\centering
+\scriptsize
+\resizebox{\textwidth}{!}{\input{source_tables/table_confirmatory_cells.tex}}
+\end{table*}
+
+\begin{figure*}[p]
+\centering
+\includegraphics[width=0.98\textwidth]{figure1_confirmatory_metric_panel.png}
+\caption{Complete confirmed-adult factorial across reconstruction, lift, matched human agreement, self-placement recoverability, left--right separation, and total variance. Filled points retain self-placement in the prompt; open points ablate it. Blue denotes original display and orange inverted display, with inverted responses decoded before substantive metrics. Geometry values use the primary DYNAMAP initialization (seed 101).}
+\label{fig:s_confirm_metrics}
+\figalttext[Six panels comparing 12 factorial cells]{All cells remain reconstructable, but self-placement classification accuracy and left-right separation drop substantially after self-placement ablation. Matched human agreement often moves in the opposite direction.}
+\end{figure*}
+
+\subsubsection{Position stability}
+
+Decoded cross-order agreement was 0.688--0.834 (Table~\ref{tab:s_confirm_position}). Thus, exchanging content and position changed 16.6--31.2\% of substantive choices. Qwen3-32B had 0.689 agreement with the self-placement cue present (95\% CI, 0.684--0.694) and 0.688 when it was ablated (95\% CI, 0.683--0.693). Gemma 4-12B was more stable after ablation (0.834; 95\% CI, 0.831--0.838) than with the cue present (0.779; 95\% CI, 0.774--0.784). Ministral 3-14B agreement was 0.786 with the cue and 0.780 without it. These are paired stability estimates, not agreement with human respondents.
+
+\begin{table*}[t]
+\caption{Substantive choice stability across original and inverted A/B displays. Brackets are UUID-bootstrap 95\% confidence intervals for decoded cross-order agreement.}
+\label{tab:s_confirm_position}
+\centering
+\small
+\input{source_tables/table_confirmatory_position.tex}
+\end{table*}
+
+Position sensitivity also varied across the 20 decision indices in the confirmed-adult histories (machine-readable sequence table). This heterogeneity shows that neither aggregate A-choice rates nor one overall stability coefficient can substitute for row-level and sequence-specific diagnostics.
+
+The UUID bootstrap is conditional on the observed proposal set. Table~\ref{tab:s_crossed_position} adds crossed UUID $\times$ proposal-A $\times$ proposal-B Poisson-pigeonhole intervals. They are generally wider, as expected when proposal composition is allowed to vary under approximate interchangeability; Figure~\ref{fig:s_crossed_uncertainty} displays the position and self-placement-cue contrasts together. This robustness estimand does not turn the 90 proposals into a probability sample from a known universe.
+
+\begin{table*}[t]
+\caption{Decoded A/B-order stability with fixed-proposal UUID-only and proposal-composition crossed intervals. Crossed intervals use Poisson-pigeonhole UUID $\times$ proposal-A $\times$ proposal-B weights.}
+\label{tab:s_crossed_position}
+\centering
+\small
+\input{source_tables/table_crossed_position_stability.tex}
+\end{table*}
+
+\subsubsection{Political self-placement cue effects}
+
+Including political self-placement increased held-out accuracy by 0.124--0.386 in all six checkpoint-by-order comparisons (Table~\ref{tab:s_confirm_prompt}). Effects were 0.343 and 0.294 for Gemma 4-12B under original and inverted orders, 0.124 and 0.147 for Ministral 3-14B, and 0.386 and 0.259 for Qwen3-32B. Paired-fold CV-10 differences were also positive (0.122--0.375; Fig.~\ref{fig:s_prompt_effects}), but folds are not independent populations.
+
+Matched human agreement moved oppositely. Including self-placement reduced agreement by 0.026--0.037 across all six comparisons, and each primary UUID-bootstrap interval excluded zero. Crossed proposal-composition intervals retain this direction (Table~\ref{tab:s_crossed_ideology}). This intervention therefore strengthens recoverability of the supplied category while slightly reducing correspondence with the matched person's observed choice.
+
+\begin{table*}[t]
+\caption{Effects of including political self-placement, computed as present minus ablated within each checkpoint and A/B order. Classification intervals pair held-out test UUIDs; human-agreement intervals resample paired UUID histories.}
+\label{tab:s_confirm_prompt}
+\centering
+\small
+\input{source_tables/table_confirmatory_prompt.tex}
+\end{table*}
+
+\begin{figure*}[p]
+\centering
+\includegraphics[width=0.98\textwidth]{figure3_ideology_ablation_effects.png}
+\caption{Effect of including political self-placement on held-out and CV-10 left--right classification accuracy. Points show present-minus-ablated contrasts separately for original and inverted proposal order; the corresponding uncertainty summaries are reported in Table~\ref{tab:s_confirm_prompt}.}
+\label{fig:s_prompt_effects}
+\figalttext[Two panels of positive self-placement-cue effects]{Every model and order shows higher political self-placement classification accuracy when self-placement is included in the prompt. The largest held-out increase is for Qwen3-32B in original order.}
+\end{figure*}
+
+\begin{table*}[t]
+\caption{Matched-human-agreement effect of including political self-placement (present minus ablated), with primary UUID-only and crossed proposal-composition intervals. The UUID-only intervals are the same archived bootstrap realization used in Table~\ref{tab:s_confirm_prompt}; the crossed intervals additionally vary proposal composition. All six crossed intervals lie below zero.}
+\label{tab:s_crossed_ideology}
+\centering
+\small
+\input{source_tables/table_crossed_ideology_effects.tex}
+\end{table*}
+
+\subsubsection{Behavioral concentration, rankings, and geometry}
+
+Across adult-primary factorial cells, aggregate decoded entropy ranged from 0.926 to 1.000 bits and the majority-choice concentration from 0.504 to 0.658. These are descriptive response-concentration diagnostics, not subgroup effect estimates.
+
+Aggregate proposal ordering is evaluated in the focal confirmed-adult analysis reported below. That analysis places the temperature-zero, self-placement-present, original-order checkpoints from all three countries on one Bradley--Terry estimator, refits adult human and model rankings in paired UUID-bootstrap samples, and propagates rank uncertainty. We do not use descriptive rankings from the intervention cells as an additional model-selection criterion.
+
+Including political self-placement consistently increased left--right centroid separation, but effects on variance and proposal-distance correlation varied by model and order (Fig.~\ref{fig:s_geometry_ablation}). Geometry intervals are conditional post-fit diagnostics. In particular, their narrowness must not be interpreted as incorporating DYNAMAP refitting uncertainty.
+
+\begin{figure*}[p]
+\centering
+\includegraphics[width=0.98\textwidth]{figure4_geometry_ablation.png}
+\caption{Contribution of the political self-placement cue to aligned latent geometry, shown as present minus ablated. Left--right separation and total variance are in human-normalized units; proposal-distance correlations compare aligned proposal topology. Bars are post-fit contrasts and do not include repeated DYNAMAP refitting uncertainty.}
+\label{fig:s_geometry_ablation}
+\figalttext[Three panels of geometry contrasts]{The self-placement cue increases left-right separation in every model and order, while effects on total variance and proposal-distance correlation vary in sign and magnitude.}
+\end{figure*}
+
+\section{Human benchmarks and policy-instrument sensitivity}
+
+\subsection{Held-out human-choice benchmarks}
+
+All benchmark predictors were trained on decisions 1--18 and evaluated on the same 3,982 confirmed-adult decisions 19--20. The references contextualize matched human agreement rather than define a normative performance ceiling (Table~\ref{tab:s_benchmark_ladder}; Fig.~\ref{fig:s_benchmark_ladder}). Balanced random choice equals 0.500 by construction and therefore has no sampling interval. The factorial LLM range was 0.530--0.614 and the comparable 27-condition grid range was 0.510--0.571, below the fitted proposal-popularity, sociodemographic-plus-pair, and human-DYNAMAP predictors. Human DYNAMAP is an out-of-sample structural reference, not a maximum that an LLM ought to attain.
+
+\begin{table*}[t]
+\caption{Held-out human-choice benchmarks evaluated on the common decision set. Confidence intervals resample UUID histories.}
+\label{tab:s_benchmark_ladder}
+\centering
+\small
+\input{source_tables/table_human_benchmark_ladder.tex}
+\end{table*}
+
+\begin{figure*}[p]
+\centering
+\includegraphics[width=0.98\textwidth]{figure1_human_fidelity_benchmark_ladder.pdf}
+\caption{Held-out human-choice benchmarks. Human predictors and LLM conditions are evaluated on the identical held-out choice set. The human DYNAMAP line is a structural reference for human predictability out of sample, not a human ceiling.}
+\label{fig:s_benchmark_ladder}
+\figalttext[Held-out benchmarks for human and LLM predictors]{Three fitted human predictors exceed all factorial and comparable grid LLM conditions on the same held-out choices.}
+\end{figure*}
+
+\subsection{Policy-domain heterogeneity}
+
+The expert taxonomy is the archived Chilean proposal-level field \texttt{topic\_name}. All 90 proposal identifiers matched. The only normalizations were typography (capitalization or whitespace), with no semantic merging. Both topic endpoints are retained for every decision, so cross-topic pairs are not assigned arbitrarily to one domain. The confirmed-adult sample contains 3,367 within-domain and 36,453 between-domain decisions. Five domains satisfied the minimum coverage criteria of at least 250 decisions, 200 UUIDs, and five proposals: Econom\'{i}a, Educaci\'{o}n, Modernizaci\'{o}n del Estado, Salud, and Vivienda y Transporte (Table~\ref{tab:s_topic_coverage}).
+
+Within-topic direct fidelity, self-placement-cue effects, and A/B instability vary across these strata (Fig.~\ref{fig:s_topics}). Figure~\ref{fig:s_topic_pairs} documents coverage across all 105 unordered topic pairs. The complete within-topic table, sample sizes, Holm correction, low-coverage flags, and exploratory ridge model with both endpoints are preserved in the machine-readable source tables. Effects are descriptive of policy domains in this Chilean instrument; their magnitude is not an index of cultural importance.
+
+\begin{table*}[t]
+\caption{Coverage of the expert-coded proposal topics. The minimum display criteria required at least 250 decisions, 200 UUIDs, and five proposals.}
+\label{tab:s_topic_coverage}
+\centering
+\scriptsize
+\input{source_tables/table_topic_coverage_compact.tex}
+\end{table*}
+
+\begin{figure*}[p]
+\centering
+\includegraphics[width=0.98\textwidth]{figure3_within_topic_heterogeneity.pdf}
+\caption{Within-topic heterogeneity in behavior. The display includes only the five domains meeting the minimum coverage criteria.}
+\label{fig:s_topics}
+\figalttext[Topic heterogeneity heatmap]{Behavioral fidelity, self-placement-cue effects, and position sensitivity differ across expert-coded policy topics, with low-coverage strata marked.}
+\end{figure*}
+
+\begin{figure*}[p]
+\centering
+\includegraphics[width=0.98\textwidth]{figure4_topic_pair_coverage.pdf}
+\caption{Coverage of symmetrized, unordered policy-domain pairs. This display retains both endpoints rather than assigning between-domain decisions to one category.}
+\label{fig:s_topic_pairs}
+\figalttext[Topic-pair coverage heatmap]{A heatmap displays sample coverage for pairs of expert-coded policy topics.}
+\end{figure*}
+
+\subsection{DYNAMAP sensitivity to topic composition}
+
+Thirty-nine delete-one-topic refits remove Modernizaci\'{o}n del Estado, Salud, or Educaci\'{o}n from the adult human space and each of the 12 adult factorial conditions, using the same architecture, seed, and temporal split. These were the three eligible within-topic domains with the largest confirmed-adult decision counts (1,300, 450, and 293, respectively); selection used coverage only and not DYNAMAP outcomes. Directions of the central contrasts generally persist, but proposal-distance correlations are especially sensitive to which policy domains are retained (Fig.~\ref{fig:s_delete_topic}). This is a sensitivity pilot, not an interval for a population of topic compositions.
+
+\begin{figure*}[p]
+\centering
+\includegraphics[width=0.98\textwidth]{figure5_dynamap_delete_topic_refit_pilot.pdf}
+\caption{Delete-one-topic DYNAMAP refit sensitivity pilot. The 39 refits hold architecture, seed, and temporal split fixed. Proposal-distance topology is comparatively sensitive to topic composition; the display is diagnostic rather than a population confidence interval.}
+\label{fig:s_delete_topic}
+\figalttext[Topic-deletion DYNAMAP sensitivity plot]{Removing one of three high-exposure policy topics changes some geometry metrics, especially proposal-distance correlations, while central contrast directions generally persist.}
+\end{figure*}
+
+\section{France--Brazil cross-country replication}
+
+\subsection{Primary C20 results}
+
+The replication contains 24 complete checkpoint-by-cue-by-order response cells. The stored inference generated 328,560 responses over the union needed for C20 and C10 before the confirmed-adult restriction; the primary confirmed-adult C20 analysis uses 306,480 of those responses. Decision keys join one-to-one to the fixed human rows, inverted displays exchange both proposal identity and position, and all decoded responses return to a common proposal-identity representation before analysis. The 52 human and synthetic DYNAMAP fits use the same architecture and country-specific preprocessing described above. Table~\ref{tab:s_crosscountry_all_cells} reports all 24 primary C20 cells underlying the ranges in the main text.
+
+\begin{table*}[p]
+\caption{All 24 primary C20 cross-country cells. Cue indicates whether political self-placement was present or ablated. Dyn. acc. is DYNAMAP validation accuracy; Majority is the condition-specific held-out majority-label accuracy; Lift is their difference; Matched human is decoded agreement with the corresponding human choice; and Displayed A is the fraction of responses selecting the visible A position. Under the selected-first released order, the per-cell Displayed A is determined by matched agreement; the order mean is therefore the positional statistic, with 0.5 indicating no letter-position concentration. No treatment averaging is applied to the other columns.}
+\label{tab:s_crosscountry_all_cells}
+\centering
+\scriptsize
+\resizebox{\textwidth}{!}{\input{source_tables/table_crosscountry_c20_all_cells.tex}}
+\end{table*}
+
+Self-placement classification requires separate treatment of class imbalance. Table~\ref{tab:s_crosscountry_classification} reports the augmented sociodemographic-plus-coordinate classifier in every C20 cell. The held-out majority rule is 0.810 in France (179/221) and 0.786 in Brazil (92/117). French raw accuracy of 0.774--0.810 coexists with balanced accuracy of 0.480--0.582, macro-F1 of 0.438--0.595, and ROC AUC of 0.470--0.638. Brazilian results are heterogeneous: raw accuracy is 0.744--0.846, balanced accuracy 0.487--0.742, macro-F1 0.457--0.756, and ROC AUC 0.420--0.807. Raw accuracy alone therefore does not establish strong self-placement recoverability.
+
+\begin{table*}[p]
+\caption{Political self-placement classification in all 24 confirmed-adult primary C20 cells. Models use archived sociodemographic fields plus two DYNAMAP coordinates. Bal. acc. is the mean of left- and right-class recall; macro-F1 weights the two classes equally. Held-out sample sizes are 221 in France and 117 in Brazil; corresponding majority-rule accuracies are 0.810 and 0.786.}
+\label{tab:s_crosscountry_classification}
+\centering
+\scriptsize
+\resizebox{\textwidth}{!}{\input{source_tables/table_crosscountry_c20_classification.tex}}
+\end{table*}
+
+Table~\ref{tab:s_crosscountry_c20} reports treatment-balanced adult C20 estimates. DYNAMAP reconstruction is 0.761--0.793 after averaging the four treatment cells within checkpoint and country, and lift is 0.233--0.273. The corresponding agreement estimates are 0.651--0.687 in France and 0.572--0.636 in Brazil. The national adult human DYNAMAP references are 0.773 reconstruction and 0.262 lift in France and 0.778 reconstruction and 0.229 lift in Brazil. These equal-weight estimates are the primary fidelity summaries because original-order agreement alone is outcome-informed under the selected-first released-file convention.
+
+\begin{table*}[p]
+\caption{Primary confirmed-adult C20 treatment-balanced results. Estimates give equal weight to self-placement present/ablated and original/inverted cells. Human-reference rows report national DYNAMAP point diagnostics; matched-agreement confidence intervals resample complete UUID histories 2,000 times. Self-pl. is held-out left--right self-placement classification accuracy; $\Delta$ coord. is its gain over the sociodemographic model. For the human-reference rows, Self-pl. and $\Delta$ coord. are computed from the human DYNAMAP coordinates under the same random forest, fixed holdout, and sociodemographic baseline as the synthetic rows. L--R and Var. are fractions of the corresponding national human geometry; $r_{dist}$ is the within-country proposal-distance correlation; and $\rho_{BT}$ is the Bradley--Terry rank correlation with the national human ranking. Human-reference rows in Panel B are 1.000 by definition. French and Brazilian C20 majority rules are 0.810 and 0.786, respectively; raw self-placement accuracy should be read with Table~\ref{tab:s_crosscountry_classification}.}
+\label{tab:s_crosscountry_c20}
+\centering
+\footnotesize
+\textit{Panel A. Reconstruction, matched human agreement, and self-placement recoverability}\par\smallskip
+\resizebox{\textwidth}{!}{\input{source_tables/table_crosscountry_c20_performance.tex}}
+\medskip
+
+\textit{Panel B. Participant geometry and proposal-space fidelity}\par\smallskip
+\input{source_tables/table_crosscountry_c20_geometry.tex}
+\end{table*}
+
+Paired decoded identity consistency ranged from 0.698 to 0.877 (Table~\ref{tab:s_crosscountry_ab}; Fig.~\ref{fig:s_crosscountry_position}), corresponding to substantive change rates of 0.123--0.302. Order-specific matched agreement differed sharply across checkpoints. The order-mean Displayed-A column in Table~\ref{tab:s_crosscountry_all_cells} showed opposite checkpoint-specific letter-position concentration. Because released original order is selected-first, the per-cell displayed-A rate is algebraically determined by matched agreement; the order mean is the positional statistic. These contrasts are not intrinsic policy-preference effects. They reinforce the decision to emphasize treatment-balanced levels and paired identity consistency rather than a single order-specific cell.
+
+\begin{table*}[p]
+\caption{Proposal-identity stability under content-and-position A/B inversion in C20. Consistency compares paired decoded substantive choices; change is one minus consistency. Confidence intervals resample UUID histories 2,000 times.}
+\label{tab:s_crosscountry_ab}
+\centering
+\scriptsize
+\resizebox{\textwidth}{!}{\input{source_tables/table_crosscountry_ab_stability.tex}}
+\end{table*}
+
+\begin{figure*}[p]
+\centering
+\includegraphics[width=0.98\textwidth]{figure2_ab_position_stability.pdf}
+\caption{Decoded proposal-identity consistency under original versus inverted content-and-position displays in France and Brazil. Points and UUID-bootstrap 95\% intervals are shown separately by checkpoint and self-placement-cue condition. This is position stability, not agreement with human respondents.}
+\label{fig:s_crosscountry_position}
+\figalttext[Two panels of France and Brazil position stability]{Identity consistency varies from roughly 0.70 to 0.88 across countries, checkpoints, and self-placement-cue conditions. Cue ablation increases consistency for Gemma and Qwen but not for Ministral.}
+\end{figure*}
+
+Treatment-balanced coordinate variance is 0.086--0.105 of the French adult human reference and 0.025--0.043 of the Brazilian adult reference. Left--right separation is more context-variable: 0.182--0.363 of human in France and 0.040--0.111 in Brazil. These summaries average four separately fitted spaces and are not common cross-country coordinates. Figure~\ref{fig:s_crosscountry_geometry} shows the distribution of the four cell-specific fractions behind each treatment-balanced mean. Geometry intervals in the source tables condition on a single fitted network and must not be read as retraining uncertainty.
+
+\begin{figure*}[p]
+\centering
+\includegraphics[width=0.98\textwidth]{figure3_within_country_geometry_compression.pdf}
+\caption{Latent-space geometry relative to each national human reference. Boxplots summarize the four C20 self-placement-cue-by-order cells within checkpoint and country. The dashed line marks the national human value. France and Brazil were aligned separately; no point implies a shared DYNAMAP coordinate system across countries.}
+\label{fig:s_crosscountry_geometry}
+\figalttext[Two panels of national geometry fractions]{Synthetic total variance is far below one in every French and Brazilian condition. Left-right separation varies more, including two high French cells, but is consistently small in Brazil.}
+\end{figure*}
+
+Aggregate proposal fidelity is incomplete even where matched human agreement is comparatively high. Treatment-balanced proposal-distance correlations are 0.241--0.311 in France and 0.141--0.178 in Brazil. Treatment-balanced Bradley--Terry rankings and summaries are included in the accompanying Source Data. Because averaging four fitted utility vectors is not the same estimand as refitting on one common fixed condition, inferential interpretation uses the paired analysis reported below rather than these descriptive treatment-balanced ranks.
+
+The pooled point contrasts in Fig.~\ref{fig:s_crosscountry_factorial} summarize direction rather than uncertainty: averaging across the French and Brazilian cells, including political self-placement reduces agreement and DYNAMAP lift for all three checkpoints, while the average inverted-minus-original contrast differs in sign for Ministral. Country-, order-, and prompt-specific tables should be used for substantive interpretation because pooling can conceal interactions.
+
+\begin{figure*}[p]
+\centering
+\includegraphics[width=0.98\textwidth]{figure5_c20_factorial_contrasts.pdf}
+\caption{Descriptive C20 factorial point contrasts pooled across French and Brazilian cells. Blue bars are self-placement present minus ablated and orange bars inverted minus original. The figure does not display uncertainty and does not override country- and order-specific UUID-bootstrap contrasts in the machine-readable tables.}
+\label{fig:s_crosscountry_factorial}
+\figalttext[Two panels of pooled point contrasts]{Average self-placement-cue contrasts are negative for matched human agreement and DYNAMAP lift. Average order contrasts are negative for Gemma and Qwen agreement but positive for Ministral agreement and lift.}
+\end{figure*}
+
+Detailed sequence, subgroup, proposal, response-entropy, persistence, and cleavage diagnostics are provided as machine-readable Supplementary Source Data. These strata are descriptive; sparse region groups are not interpreted as stable subgroup effects.
+
+\subsection{Broader C10 sensitivity}
+
+The broader C10 specification modestly lowers treatment-balanced DYNAMAP reconstruction relative to C20 for every checkpoint and country. Treatment-balanced agreement differs by less than 0.014 in absolute value, decreasing in Brazil and increasing in France. Political recoverability and especially left--right separation are less stable across cohort definitions. Because participant eligibility, history length, training volume, and held-out position all change, Table~\ref{tab:s_crosscountry_c10} and Fig.~\ref{fig:s_crosscountry_c10} are descriptive sensitivity analyses, not factorial estimates.
+
+\begin{table*}[p]
+\caption{Treatment-balanced confirmed-adult C10 and C20 sensitivity. C20 is primary. Cohort differences are descriptive because C10 and C20 do not differ only in decision count. Raw self-placement accuracy must be read against its cohort-specific majority rule; C20 rules are 0.810 in France and 0.786 in Brazil (Table~\ref{tab:s_crosscountry_classification}).}
+\label{tab:s_crosscountry_c10}
+\centering
+\footnotesize
+\textit{Panel A. Reconstruction, matched human agreement, and self-placement recoverability}\par\smallskip
+\input{source_tables/table_crosscountry_c10_c20_performance.tex}
+\medskip
+
+\textit{Panel B. Participant geometry and proposal topology}\par\smallskip
+\input{source_tables/table_crosscountry_c10_c20_geometry.tex}
+\end{table*}
+
+\begin{figure*}[p]
+\centering
+\includegraphics[width=0.98\textwidth]{figure4_c10_c20_sensitivity.pdf}
+\caption{Broader-cohort sensitivity, shown as C10 minus C20 across the 12 treatment cells per country. The panels display reconstruction, matched human agreement, self-placement held-out accuracy, and normalized left--right separation. Differences combine cohort composition, history length, training volume, and holdout position.}
+\label{fig:s_crosscountry_c10}
+\figalttext[Four panels comparing broader cohorts]{C10 reconstruction is generally lower. Matched human agreement changes are small and opposite in direction by country, while self-placement classification accuracy and left-right separation are more sensitive to cohort definition.}
+\end{figure*}
+
+\section{Additional sensitivity and independent validation}
+
+\subsection{Temperature, response balance, and entropy}
+
+Temperature means do not support monotonic fidelity improvement in the adult-primary grid. From $T=0$ to $T=0.7$, mean matched human agreement changes from 0.542 to 0.540, mean held-out self-placement recoverability from 0.743 to 0.726, mean DYNAMAP lift from 0.170 to 0.109, mean proposal-distance correlation from 0.078 to 0.079, and mean seed-101 variance fraction from 0.028 to 0.031. The variance increase is small relative to the missing human variance and does not show that temperature recovers human heterogeneity. Choice-A rates and aggregate response entropy vary substantially across conditions, demonstrating that similar raw accuracy can coexist with different response concentrations.
+
+\subsection{Exploratory boundary check: sequential context}
+
+The main persona-replay design supplies each policy choice without prior model responses. This boundary check tests one sequential-context alternative within a single Chilean checkpoint and implementation: a local, quantized Qwen3-8B Q4\_K\_M replay with temperature-zero decoding. Decision 1 used a byte-identical stateless message; decisions 2--20 prefixed an oldest-to-newest JSONL history containing only the model's previous alternatives and its own A/B choices. The quantization, inference engine, and response protocol differ from the primary grid. Absolute levels therefore cannot be compared with the bfloat16/vLLM grid; only sequential versus matched local stateless differences identify the effect within this replay. The analysis does not generalize across model families, scales, temperatures, countries, or the factorial and is not a general evaluation of memory or agents.
+
+After projection to the confirmed-adult cohort, the stored replay contributed 39,820 valid decisions from 1,991 adults. Eleven memory-free first responses differed across otherwise identical requests (0.55\% of the adult cohort), reflecting run-to-run computational reproducibility rather than the sequential-context treatment. The primary paired analysis therefore contains the 1,980 confirmed adults with exact first-choice reproduction; all 1,991 confirmed adults form the robustness cohort. The original response records were preserved unchanged.
+
+\begin{table*}[!b]
+\caption{Single-checkpoint deterministic Qwen3-8B sequential-context boundary check. Behavioral intervals resample matched UUID histories.}
+\label{tab:s_memory}
+\centering
+\small
+\begin{tabular}{lrrrrrr}
+\toprule
+Cohort & UUIDs & Changed & Stateless agreement & Sequential agreement & Difference & 95\% CI \\
+\midrule
+Primary adult exact first-choice match & 1,980 & 0.1838 & 0.5293 & 0.4901 & $-0.0393$ & [$-0.0438$, $-0.0350$] \\
+All-adult robustness & 1,991 & 0.1844 & 0.5293 & 0.4901 & $-0.0392$ & [$-0.0434$, $-0.0346$] \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+In the primary confirmed-adult cohort, sequential context changed 18.38\% of choices and reduced matched human agreement from 0.5293 to 0.4901 (Table~\ref{tab:s_memory}). Although raw DYNAMAP reconstruction rose from 0.853 to 0.978, its lift over the condition-specific majority rule fell from 0.057 to $-0.011$, indicating that greater internal predictability reflected response concentration rather than restored human-like structure.
+
+Geometric recovery was likewise limited (Fig.~\ref{fig:s_memory_geometry}). In the primary paired cohort, left--right separation was 6.5\% of the matched human value under stateless replay and 18.2\% with sequential context; total coordinate variance was 1.6\% and 6.6\% of human variance, respectively; and proposal-distance correlation changed from 0.066 to 0.081. The all-adult fits again remained compressed despite some movement (18.0\% versus 32.2\% left--right separation; 0.9\% versus 3.4\% total variance). These fit-sensitive differences do not show restoration of human geometry. They apply only to the paired local replay and cannot be used to rank the sequential run against the primary grid.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.98\textwidth]{figureS2_memory_geometry_adult_paired_1980.pdf}
+\caption{Proposal-anchored geometry for the primary 1,980-UUID confirmed-adult sequential-context boundary check. The human, stateless, and sequential spaces use identical axes. Sequential context changes local concentration but does not restore the breadth of the human space.}
+\label{fig:s_memory_geometry}
+\figalttext[Three aligned preference maps]{Human coordinates form a broad cloud. Stateless and sequential-context Qwen3-8B coordinates remain narrowly concentrated near the center.}
+\end{figure*}
+
+\subsection{Confirmed-adult cohort construction and provenance}
+
+All reported estimands use confirmed-adult cohorts. The Chilean source frame contained 2,000 sampled participants; the confirmed-adult cohort contained the 1,991 members whose exact reported age was at least 18. France retained 843 of 873 C20 participants and Brazil 434 of 452; because those releases record age categorically, the entire 10--19 band was excluded conservatively rather than attempting to distinguish ages 18--19. The broader C10 sensitivity likewise retained 847 French and 515 Brazilian confirmed adults. Stored model responses were projected onto these fixed adult manifests, and all human references, synthetic DYNAMAP fits, classifiers, geometric alignments, and independent proposal-space estimators were recomputed on matched adult UUID sets. No language-model inference was repeated. Original frame sizes are reported only to document cohort construction, not as alternative results.
+
+\subsection{Thirty-seed DYNAMAP initialization sensitivity}
+
+We varied only the DYNAMAP initialization seed across 30 fixed values specified before refitting the confirmed-adult primary C20 human cohorts and the three focal temperature-zero, self-placement-present, original-order checkpoints. This produced 360 fits: four response sources by three countries by 30 seeds. Every model space was aligned to the human space fitted with the same seed. The resulting distributions measure optimization sensitivity; they do not quantify LLM-generation, participant-sampling, or proposal-sampling uncertainty.
+
+Reconstruction lift was positive in all 270 artificial fits, and artificial participant-coordinate variance was below the same-seed adult human reference in all 270 (Table~\ref{tab:s_multiseed}; Fig.~\ref{fig:s_multiseed}). Coordinate gain over sociodemographics was positive in all 90 Chilean and all 90 French model fits and in 87 of 90 Brazilian fits. Precise model rankings were less stable than the central directional results. Occasional left--right ratios above one in Chile or France coexist with uniformly compressed total variance and do not imply recovery of the full two-dimensional topology.
+
+\begin{table*}[p]
+\caption{DYNAMAP initialization sensitivity across 30 seeds. Entries are seed means with 5th and 95th percentiles. Each artificial fit is normalized or aligned to the same-seed human fit. Lift is reconstruction accuracy minus the held-out majority rule; $\Delta$ coord. is held-out self-placement classification accuracy minus the sociodemographic baseline.}
+\label{tab:s_multiseed}
+\centering
+\footnotesize
+\textit{Panel A. Reconstruction lift and incremental self-placement recoverability}\par\smallskip
+\input{source_tables/table_robustness_dynamap_multiseed_performance.tex}
+\medskip
+
+\textit{Panel B. Participant-variance and proposal-distance fidelity}\par\smallskip
+\input{source_tables/table_robustness_dynamap_multiseed_geometry.tex}
+\end{table*}
+
+\begin{figure*}[p]
+\centering
+\includegraphics[width=0.98\textwidth]{figureS_dynamap_multiseed.pdf}
+\caption{Optimization sensitivity across 30 DYNAMAP initialization seeds for the three focal checkpoints and matched human references in each country. The distributions support robust positive internal reconstruction and participant-variance compression, while some one-dimensional and political-grouping metrics vary appreciably with initialization.}
+\label{fig:s_multiseed}
+\figalttext[Multi-seed DYNAMAP sensitivity panels]{Across countries and checkpoints, reconstruction lift stays positive and artificial total variance stays below the human reference for every seed. Coordinate gain is consistently positive in Chile and France but crosses zero in Brazil.}
+\end{figure*}
+
+\subsection{Bradley--Terry aggregate proposal-space validation}
+
+Regularized Bradley--Terry rankings used pairwise logistic models without an intercept \citep{Bradley1952}. The primary regularization was L2 $C=1$, with $C=0.1$ and $C=10$ point-estimate sensitivities. The analysis used the same confirmed-adult C20 cohorts and the same three temperature-zero, self-placement-present, original-order checkpoints as the multi-seed analysis. Within each country and checkpoint, 2,000 paired UUID-cluster bootstrap replicates refit both the human and synthetic rankings. Intervals therefore represent participant-cohort sampling uncertainty conditional on the observed proposal universe; they are not model-generation or country-level uncertainty.
+
+Spearman adult human-rank correlation ranged from 0.370 to 0.691 in Chile, 0.520 to 0.818 in France, and 0.133 to 0.669 in Brazil (Table~\ref{tab:s_bt_primary}; Fig.~\ref{fig:s_bt_primary}). Gemma ranked proposals most similarly to humans in Chile and France, Qwen did so in Brazil, and the Brazilian Ministral association was weak. Pairwise ordering agreement ranged from 0.626 to 0.747, 0.679 to 0.808, and 0.543 to 0.735, respectively. Aggregate proposal-score dispersion was not uniformly compressed: eight of nine artificial-to-human point ratios exceeded one, while Brazil Ministral was below one; the France Ministral point estimate was approximately one. This does not contradict participant-level DYNAMAP compression. Bradley--Terry dispersion measures between-proposal marginal-utility gradients; DYNAMAP variance measures between-person latent heterogeneity after proposal-anchor alignment. Aggregate rank recovery likewise does not establish person-level fidelity.
+
+\begin{table*}[p]
+\caption{Bradley--Terry aggregate proposal-space validation. Estimates use L2 $C=1$ and 2,000 paired UUID-cluster bootstrap refits of the human and artificial rankings. Dispersion is the ratio of synthetic to human root-mean-square proposal scores.}
+\label{tab:s_bt_primary}
+\centering
+\footnotesize
+\textit{Panel A. Human rank and pairwise-order recovery}\par\smallskip
+\input{source_tables/table_robustness_bradley_terry_ordering.tex}
+\medskip
+
+\textit{Panel B. Aggregate proposal-score dispersion}\par\smallskip
+\input{source_tables/table_robustness_bradley_terry_dispersion.tex}
+\end{table*}
+
+\begin{figure*}[p]
+\centering
+\includegraphics[width=0.98\textwidth]{figureS_bradley_terry_primary.pdf}
+\caption{Bradley--Terry proposal-space agreement and dispersion in the three focal temperature-zero conditions. Intervals are paired UUID-cluster bootstrap 95\% intervals. A dispersion ratio above one denotes steeper aggregate proposal utilities than in the matched human cohort, not greater participant diversity.}
+\label{fig:s_bt_primary}
+\figalttext[Bradley-Terry agreement and dispersion panels]{Adult human proposal-rank agreement is strongest for Gemma in Chile and France and for Qwen in Brazil, while Brazil Ministral is weak. Eight of nine proposal-score dispersion point ratios exceed the human reference of one.}
+\end{figure*}
+
+\subsection{Political cleavage without DYNAMAP embeddings}
+
+To test left--right structure without using DYNAMAP coordinates, we fit separate Bradley--Terry utilities among left- and right-identified participants. Chile uses self-placement 1--4 versus 6--10; France and Brazil use 1--2 versus 4--5. The midpoint is excluded only from this contrast. Utilities are centered within group, and proposal-level cleavage is right-group minus left-group utility. Positive values therefore indicate relatively greater right-group preference. The estimator, regularization sensitivities, and paired UUID-cluster bootstrap were specified before estimation. Each bootstrap resamples left and right UUIDs separately and applies the same multiplicities to matched human and model responses; intervals condition on the observed proposal universe and fixed model outputs.
+
+Under the bare-numeric self-placement prompt, the embedding-independent comparison does not support universal attenuation of political cleavage (Table~\ref{tab:s_bt_cleavage}; Fig.~\ref{fig:s_bt_cleavage}). In France, adult human--model cleavage correlations were positive for all checkpoints ($r=0.494$--$0.676$), while model RMS magnitude was 0.66--0.96 of human. In Brazil, magnitude was also attenuated (0.58--0.75), but correspondence was weak for Gemma and Ministral, with 95\% intervals that included zero; Qwen had the strongest positive correlation ($r=0.410$). In Chile, all three cleavage vectors were negatively associated with the adult human vector ($r=-0.592$ to $-0.442$, intervals excluding zero) and their RMS magnitude was 1.41--2.28 times the human value. Under the instrument-defined Chilean grouping of 1--4 as left and 6--10 as right, this is a directional mismatch between synthetic and human proposal-level cleavage. The $C=0.1$ and $C=10$ sensitivities preserve the qualitative diagnosis. The endpoint-anchor section below shows that the Qwen3-32B component of this pattern is prompt-sensitive and should not be read as an invariant country signature.
+
+This result is compatible with uniformly narrow participant-level DYNAMAP variance because the estimands differ. DYNAMAP variance measures the breadth of individual latent positions after proposal-anchor alignment; Bradley--Terry cleavage measures a between-group difference in marginal proposal utilities. A narrow synthetic population can still encode a steep, rotated, or reversed group contrast. The result describes persona-conditioned differentiation under the tested self-placement prompt; it is neither emergent inference of political orientation nor evidence that participant-level compression implies uniformly attenuated cleavage.
+
+\begin{table*}[p]
+\caption{Embedding-independent Bradley--Terry political-cleavage validation. Pearson correlation and sign agreement assess whether the same proposals divide human and synthetic left/right groups in the same direction. RMS ratio and slope assess magnitude; a ratio of one and slope of one denote equality with the matched adult human cleavage vector. Brackets are equal-tailed percentile intervals from paired UUID-cluster bootstraps. For discrete or skewed statistics, a full-sample estimate need not lie at the center of the percentile interval; the France--Ministral sign-agreement estimate is 0.750 [0.633, 0.758].}
+\label{tab:s_bt_cleavage}
+\centering
+\scriptsize
+\resizebox{\textwidth}{!}{\input{source_tables/table_robustness_bradley_terry_cleavage.tex}}
+\end{table*}
+
+\begin{figure*}[p]
+\centering
+\includegraphics[width=0.98\textwidth]{figureS_bradley_terry_cleavage_scatter.pdf}
+\caption{Proposal-level human and synthetic political cleavage under the bare-numeric self-placement prompt, without DYNAMAP embeddings. Each panel compares centered right-minus-left Bradley--Terry utilities for one country and checkpoint. The diagonal denotes equality; point color denotes the sign of human cleavage. These baseline patterns motivated the later single-checkpoint endpoint-anchor probe in Figs.~\ref{fig:s_endpoint_behavior}--\ref{fig:s_endpoint_dynamap}.}
+\label{fig:s_bt_cleavage}
+\figalttext[Nine proposal-level cleavage scatterplots]{France shows positive human-model cleavage alignment, Brazil mostly weak positive alignment and attenuated magnitude, and Chile negative alignment with synthetic magnitude exceeding the human reference.}
+\end{figure*}
+
+\begin{figure*}[p]
+\centering
+\includegraphics[width=0.98\textwidth]{figure2_crossed_uuid_proposal_uncertainty.pdf}
+\caption{Proposal-composition sensitivity for the two factorial contrasts summarized in the intervention results. The left panel shows decoded substantive agreement across original and inverted A/B displays. The right panel shows the effect of including political self-placement on matched human agreement. Blue intervals resample UUID histories while holding the 90 observed proposals fixed; orange intervals use crossed UUID $\times$ proposal-A $\times$ proposal-B Poisson-pigeonhole weights. The crossed intervals are an approximate robustness analysis under proposal interchangeability, not sampling inference for a known policy universe.}
+\label{fig:s_crossed_uncertainty}
+\figalttext[Two panels comparing UUID-only and crossed intervals]{Crossed proposal-composition intervals are wider than UUID-only intervals, but cross-order agreement remains below one and every self-placement-cue effect on matched human agreement remains below zero.}
+\end{figure*}
+
+\clearpage
+\section{Verbal endpoint-anchor mechanism probe}
+
+The verbal endpoint intervention changed a substantial share of fixed Qwen3-32B choices while producing only modest order-averaged gains in matched human agreement (Table~\ref{tab:s_endpoint_anchor}; Fig.~\ref{fig:s_endpoint_behavior}). Anchors changed 28.1\% [27.4\%, 28.8\%] of choices in Chile, 20.5\% [19.7\%, 21.2\%] in France, and 22.4\% [21.3\%, 23.6\%] in Brazil. Agreement increased by 4.2 [3.7, 4.7], 3.1 [2.2, 4.0], and 3.7 [2.4, 5.0] percentage points, respectively, after equal weighting across original and inverted displays. Cross-order proposal-identity consistency increased from 0.689 to 0.745 in Chile but decreased from 0.759 to 0.625 in France and from 0.737 to 0.569 in Brazil. Thus, verbal clarification did not remove the position intervention and intensified it in two settings.
+
+\begin{table*}[p]
+\caption{Endpoint-anchor diagnostic for Qwen3-32B at $T=0$. Changed and $\Delta$ agreement compare anchored with bare responses within the same participant--decision cells. Cleavage is Pearson correlation between adult human and model Bradley--Terry right-minus-left proposal utilities. Self-pl. accuracy and participant variance use the primary DYNAMAP initialization (seed 101); variance is normalized to the same-seed national human fit. Original and inverted displays are reported separately because the anchor effect remained position-dependent.}
+\label{tab:s_endpoint_anchor}
+\centering
+\scriptsize
+\resizebox{\textwidth}{!}{\input{source_tables/table_endpoint_anchor_diagnostic.tex}}
+\end{table*}
+
+The embedding-independent cleavage estimates changed more sharply than average agreement (Fig.~\ref{fig:s_endpoint_cleavage}). Human--model cleavage correlation moved from negative to positive in Chile under both orders ($-0.442$ to 0.409 and $-0.474$ to 0.388). France moved from 0.494 to 0.828 in original order and from 0.228 to 0.601 after inversion; Brazil moved from 0.410 to 0.772 and from 0.039 to 0.599. The direction became more human-aligned, but magnitude was not restored to equality: the RMS ratio increased from 2.28 to 2.66 and from 1.97 to 2.67 in Chile, from 0.66 to 1.56 and 0.57 to 1.20 in France, and from 0.58 to 1.43 and 0.54 to 1.07 in Brazil. The bare-prompt country pattern therefore cannot be interpreted as an invariant model or national signature.
+
+The DYNAMAP refits reached the same substantive boundary (Fig.~\ref{fig:s_endpoint_dynamap}). At seed 101, anchors increased held-out self-placement accuracy in every country and order. In original order it rose from 0.925 to 0.968 in Chile, 0.792 to 0.824 in France, and 0.761 to 0.915 in Brazil; inverted-order gains computed from the displayed three-decimal values were 0.126, 0.050, and 0.119. Participant-coordinate variance nevertheless remained below the same-seed human reference in all six anchored fits: 0.016 and 0.004 in Chile, 0.281 and 0.087 in France, and 0.185 and 0.032 in Brazil for original and inverted displays. In Chile, the anchored values were reductions from bare-prompt fractions of 0.062 and 0.019: greater recoverability coincided with a narrower participant space. France and Brazil expanded under original order, but the smaller inverted-order estimates and broad initialization distributions show that this was not a position-invariant recovery of population geometry. Left--right separation increased robustly in Brazil, was frequently positive but initialization-sensitive in France, and showed no stable repair in Chile. The intervention therefore improved interpretation of the supplied axis without recovering the full two-dimensional human structure.
+
+\begin{figure*}[p]
+\centering
+\includegraphics[width=0.98\textwidth]{figureS_endpoint_anchor_behavior.pdf}
+\caption{Paired behavioral effects of verbal self-placement endpoints. The upper panels report the share of choices changed and the change in matched human agreement separately by proposal order. The lower panels report changes in original-A rate and cross-order proposal-identity consistency. Intervals are paired UUID-cluster bootstrap 95\% intervals.}
+\label{fig:s_endpoint_behavior}
+\figalttext[Four panels of endpoint-anchor behavioral effects]{Verbal endpoints change about one fifth to three tenths of choices. Human agreement rises in original order in all settings but falls after inversion in France and Brazil. Cross-order consistency improves only in Chile.}
+\end{figure*}
+
+\begin{figure*}[p]
+\centering
+\includegraphics[width=0.98\textwidth]{figureS_endpoint_anchor_cleavage.pdf}
+\caption{Bradley--Terry political cleavage under bare numeric and verbally anchored self-placement. Panels compare human--model correlation, synthetic-to-human RMS magnitude, slope through the origin, and proposal sign agreement. Filled markers denote original order and hollow markers inverted order; intervals are paired UUID-cluster bootstrap 95\% intervals.}
+\label{fig:s_endpoint_cleavage}
+\figalttext[Four panels of endpoint-anchor cleavage metrics]{Anchored prompts move political-cleavage correlations and slopes toward the human direction in every country and order, while magnitude becomes amplified in Chile and in some French and Brazilian cells.}
+\end{figure*}
+
+\begin{figure*}[p]
+\centering
+\includegraphics[width=0.98\textwidth]{figureS_endpoint_anchor_dynamap.pdf}
+\caption{DYNAMAP diagnostics under bare numeric and verbally anchored self-placement. Points show seed 101; vertical ranges show the 5th--95th percentiles across 30 additional initialization seeds. Bare and anchored original/inverted conditions use identical adult cohorts, splits, architecture, and same-seed human references. The dashed value one in normalized panels denotes the human reference.}
+\label{fig:s_endpoint_dynamap}
+\figalttext[Seven DYNAMAP panels for endpoint-anchor sensitivity]{Verbal endpoints usually increase self-placement recoverability and sometimes expand left-right separation or variance, but all seed-101 participant-variance estimates remain far below the human reference and several effects differ by proposal order or initialization.}
+\end{figure*}
+
+\clearpage
+\section{Reproducibility materials}
+
+The accompanying reproducibility package separates stored model responses from statistical estimation and manuscript rendering. It provides the exact confirmed-adult cohort manifests; model-condition dictionary; bare and endpoint-anchored prompts and response-decoding rules; complete condition-level metrics; participant-cluster bootstrap summaries; DYNAMAP initialization sensitivities; Bradley--Terry aggregate-ranking and political-cleavage estimates; machine-readable source data for every displayed table and figure; and executable analysis notebooks. Exact model revisions, inference engines, numerical formats, decoding settings, and random seeds are retained. Public materials exclude direct identifiers and private participant-level joined records.
+
+\section{Scope of robustness analyses}
+
+The completed robustness analyses address A/B position, the political self-placement cue, verbal endpoint specification at one focal checkpoint, participant and proposal composition, selected policy domains, adult cohort construction, DYNAMAP initialization for the focal checkpoints, and participant-cluster uncertainty for Bradley--Terry estimates. They do not provide probability-sample or calibrated population estimates, proposal-superpopulation inference, categorical-region split sensitivity, repeated DYNAMAP fitting for every grid and treatment-balanced condition, or generalization of the endpoint effect across checkpoints. These boundaries limit the scope of inference; they are not unreported completed analyses.
+
+\bibliographystyle{oup-plain}
+\nocite{Abeliuk2026,Argyle2023,Atari2023,Ball2025,Bernardelle2025,Bhattacharyya2026,Bisbee2024,Brinkmann2023,GudinoRosero2024,Lu2025,Navarrete2024,Santurkar2023,Wang2025,Xiao2026}
+\bibliography{references}
+
+\end{document}

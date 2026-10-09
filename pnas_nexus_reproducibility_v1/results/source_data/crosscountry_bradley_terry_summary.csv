@@ -1,0 +1,145 @@
+country,cohort,condition_id,group,spearman_rank_correlation_with_human,pearson_bt_score_correlation_with_human,top_k,top_k_overlap_with_human
+france,C20,fr_gemma4_12b_t0p0_ideology_present_ab_original,All,0.8189318702687686,0.799841138490249,15,6
+france,C20,fr_gemma4_12b_t0p0_ideology_present_ab_original,Left 1–2,0.8313702340440308,0.8051530591838739,15,8
+france,C20,fr_gemma4_12b_t0p0_ideology_present_ab_original,Right 4–5,0.5295367733870407,0.4727555227006276,15,5
+france,C20,fr_qwen3_32b_t0p0_ideology_present_ab_original,All,0.6458573512049447,0.6380827225601918,15,6
+france,C20,fr_qwen3_32b_t0p0_ideology_present_ab_original,Left 1–2,0.5890339606917147,0.6023587070092908,15,8
+france,C20,fr_qwen3_32b_t0p0_ideology_present_ab_original,Right 4–5,0.5096048336690048,0.4817131397202472,15,5
+france,C20,fr_ministral3_14b_t0p0_ideology_present_ab_original,All,0.5199041600111118,0.5433487765074279,15,3
+france,C20,fr_ministral3_14b_t0p0_ideology_present_ab_original,Left 1–2,0.48642266824085,0.5526009353128474,15,4
+france,C20,fr_ministral3_14b_t0p0_ideology_present_ab_original,Right 4–5,0.40034724633655105,0.37819067478222346,15,4
+france,C20,fr_gemma4_12b_t0p0_ideology_present_ab_inverted,All,0.6251545246197652,0.5959763555533656,15,2
+france,C20,fr_gemma4_12b_t0p0_ideology_present_ab_inverted,Left 1–2,0.6590457670671573,0.6221407374937099,15,5
+france,C20,fr_gemma4_12b_t0p0_ideology_present_ab_inverted,Right 4–5,-0.11668865893464822,-0.12180372548486455,15,0
+france,C20,fr_qwen3_32b_t0p0_ideology_present_ab_inverted,All,0.4314674630182651,0.4569128504014323,15,3
+france,C20,fr_qwen3_32b_t0p0_ideology_present_ab_inverted,Left 1–2,0.3653100909785401,0.40739972302884353,15,2
+france,C20,fr_qwen3_32b_t0p0_ideology_present_ab_inverted,Right 4–5,0.3285992082783526,0.28573523815589863,15,2
+france,C20,fr_ministral3_14b_t0p0_ideology_present_ab_inverted,All,0.5361205639280505,0.5716827265508195,15,3
+france,C20,fr_ministral3_14b_t0p0_ideology_present_ab_inverted,Left 1–2,0.4887631085492047,0.5654569552661679,15,5
+france,C20,fr_ministral3_14b_t0p0_ideology_present_ab_inverted,Right 4–5,0.3585943468296409,0.37642790649045765,15,4
+france,C20,fr_gemma4_12b_t0p0_ideology_ablated_ab_original,All,0.8003472463365511,0.7924837680967692,15,6
+france,C20,fr_gemma4_12b_t0p0_ideology_ablated_ab_original,Left 1–2,0.8186957427599137,0.8124959676451546,15,7
+france,C20,fr_gemma4_12b_t0p0_ideology_ablated_ab_original,Right 4–5,0.31169525661504266,0.28715091789822544,15,4
+france,C20,fr_qwen3_32b_t0p0_ideology_ablated_ab_original,All,0.7081741787624141,0.7149882360780968,15,8
+france,C20,fr_qwen3_32b_t0p0_ideology_ablated_ab_original,Left 1–2,0.7055767761650114,0.7042760713797414,15,10
+france,C20,fr_qwen3_32b_t0p0_ideology_ablated_ab_original,Right 4–5,0.366199041600111,0.327973523859835,15,4
+france,C20,fr_ministral3_14b_t0p0_ideology_ablated_ab_original,All,0.4378359608306131,0.4565785271292695,15,4
+france,C20,fr_ministral3_14b_t0p0_ideology_ablated_ab_original,Left 1–2,0.3880061115355232,0.4192196180103119,15,3
+france,C20,fr_ministral3_14b_t0p0_ideology_ablated_ab_original,Right 4–5,0.04823251614695464,-0.0022951471707632213,15,1
+france,C20,fr_gemma4_12b_t0p0_ideology_ablated_ab_inverted,All,0.7224251684144731,0.710949131849843,15,5
+france,C20,fr_gemma4_12b_t0p0_ideology_ablated_ab_inverted,Left 1–2,0.7260156955344119,0.7136238575452585,15,6
+france,C20,fr_gemma4_12b_t0p0_ideology_ablated_ab_inverted,Right 4–5,0.13941245919855544,0.11024679732243767,15,1
+france,C20,fr_qwen3_32b_t0p0_ideology_ablated_ab_inverted,All,0.5658865198972151,0.5897099023715413,15,4
+france,C20,fr_qwen3_32b_t0p0_ideology_ablated_ab_inverted,Left 1–2,0.5497187304673936,0.5880904906498012,15,5
+france,C20,fr_qwen3_32b_t0p0_ideology_ablated_ab_inverted,Right 4–5,0.11514688520036112,0.1259304605015488,15,1
+france,C20,fr_ministral3_14b_t0p0_ideology_ablated_ab_inverted,All,0.7281964025279533,0.7294170796166156,15,5
+france,C20,fr_ministral3_14b_t0p0_ideology_ablated_ab_inverted,Left 1–2,0.7203069657615112,0.7382027090033861,15,6
+france,C20,fr_ministral3_14b_t0p0_ideology_ablated_ab_inverted,Right 4–5,0.4333287033821792,0.4001466677378049,15,4
+france,C10,fr_gemma4_12b_t0p0_ideology_present_ab_original,All,0.8200500034724633,0.792719766034078,15,7
+france,C10,fr_gemma4_12b_t0p0_ideology_present_ab_original,Left 1–2,0.8241544551704979,0.800343766279588,15,7
+france,C10,fr_gemma4_12b_t0p0_ideology_present_ab_original,Right 4–5,0.5348149177026181,0.5003092391697049,15,5
+france,C10,fr_qwen3_32b_t0p0_ideology_present_ab_original,All,0.656490034030141,0.6546229215210813,15,7
+france,C10,fr_qwen3_32b_t0p0_ideology_present_ab_original,Left 1–2,0.5874296826168482,0.6123496311705529,15,7
+france,C10,fr_qwen3_32b_t0p0_ideology_present_ab_original,Right 4–5,0.4654142648795055,0.43831994358218784,15,3
+france,C10,fr_ministral3_14b_t0p0_ideology_present_ab_original,All,0.49927772761997347,0.511260247277957,15,3
+france,C10,fr_ministral3_14b_t0p0_ideology_present_ab_original,Left 1–2,0.45949024237794284,0.5152253445265155,15,4
+france,C10,fr_ministral3_14b_t0p0_ideology_present_ab_original,Right 4–5,0.37776928953399536,0.3515905939353219,15,4
+france,C10,fr_gemma4_12b_t0p0_ideology_present_ab_inverted,All,0.6145704562816862,0.5880803733998947,15,2
+france,C10,fr_gemma4_12b_t0p0_ideology_present_ab_inverted,Left 1–2,0.6593166192096673,0.6272973568261615,15,6
+france,C10,fr_gemma4_12b_t0p0_ideology_present_ab_inverted,Right 4–5,-0.11618862421001458,-0.11695565306539525,15,0
+france,C10,fr_qwen3_32b_t0p0_ideology_present_ab_inverted,All,0.44266962983540514,0.4673179092648144,15,1
+france,C10,fr_qwen3_32b_t0p0_ideology_present_ab_inverted,Left 1–2,0.35838599902771023,0.4157839878642678,15,3
+france,C10,fr_qwen3_32b_t0p0_ideology_present_ab_inverted,Right 4–5,0.2930342384887839,0.2575957068982711,15,2
+france,C10,fr_ministral3_14b_t0p0_ideology_present_ab_inverted,All,0.5452531425793457,0.5619895480730239,15,3
+france,C10,fr_ministral3_14b_t0p0_ideology_present_ab_inverted,Left 1–2,0.4779012431418848,0.5539184203342185,15,5
+france,C10,fr_ministral3_14b_t0p0_ideology_present_ab_inverted,Right 4–5,0.3353080075005208,0.3261356912090371,15,3
+france,C10,fr_gemma4_12b_t0p0_ideology_ablated_ab_original,All,0.8004375303840543,0.7945276924268251,15,9
+france,C10,fr_gemma4_12b_t0p0_ideology_ablated_ab_original,Left 1–2,0.8193485658726299,0.8192627814220426,15,10
+france,C10,fr_gemma4_12b_t0p0_ideology_ablated_ab_original,Right 4–5,0.2998680463921105,0.2633408179816247,15,5
+france,C10,fr_qwen3_32b_t0p0_ideology_ablated_ab_original,All,0.7167511632752274,0.7275991257522046,15,9
+france,C10,fr_qwen3_32b_t0p0_ideology_ablated_ab_original,Left 1–2,0.7146607403291894,0.7224272799924363,15,10
+france,C10,fr_qwen3_32b_t0p0_ideology_ablated_ab_original,Right 4–5,0.3250295159386068,0.29095087984349133,15,5
+france,C10,fr_ministral3_14b_t0p0_ideology_ablated_ab_original,All,0.40768108896451133,0.42527385909805865,15,3
+france,C10,fr_ministral3_14b_t0p0_ideology_ablated_ab_original,Left 1–2,0.3604903118272102,0.4007573051191655,15,3
+france,C10,fr_ministral3_14b_t0p0_ideology_ablated_ab_original,Right 4–5,0.03722480727828321,-0.01739503645146299,15,3
+france,C10,fr_gemma4_12b_t0p0_ideology_ablated_ab_inverted,All,0.7083825265643446,0.6999426407112708,15,7
+france,C10,fr_gemma4_12b_t0p0_ideology_ablated_ab_inverted,Left 1–2,0.7074380165289256,0.7026665108117724,15,7
+france,C10,fr_gemma4_12b_t0p0_ideology_ablated_ab_inverted,Right 4–5,0.12636294187096322,0.09155853061132913,15,2
+france,C10,fr_qwen3_32b_t0p0_ideology_ablated_ab_inverted,All,0.566497673449545,0.5923339163965325,15,4
+france,C10,fr_qwen3_32b_t0p0_ideology_ablated_ab_inverted,Left 1–2,0.554413500937565,0.5853730873128885,15,4
+france,C10,fr_qwen3_32b_t0p0_ideology_ablated_ab_inverted,Right 4–5,0.09861101465379539,0.10487960606381484,15,2
+france,C10,fr_ministral3_14b_t0p0_ideology_ablated_ab_inverted,All,0.7198972150843808,0.7240785276830356,15,4
+france,C10,fr_ministral3_14b_t0p0_ideology_ablated_ab_inverted,Left 1–2,0.720897284533648,0.7449426871735769,15,7
+france,C10,fr_ministral3_14b_t0p0_ideology_ablated_ab_inverted,Right 4–5,0.4100631988332522,0.3690709350473583,15,5
+brazil,C20,br_gemma4_12b_t0p0_ideology_present_ab_original,All,0.6164897437943971,0.6199663451451874,15,7
+brazil,C20,br_gemma4_12b_t0p0_ideology_present_ab_original,Left 1–2,0.5337616729188285,0.5451386735652742,15,6
+brazil,C20,br_gemma4_12b_t0p0_ideology_present_ab_original,Right 4–5,0.2957937584803257,0.28342560376939585,15,7
+brazil,C20,br_qwen3_32b_t0p0_ideology_present_ab_original,All,0.668648734934951,0.634595444866421,15,9
+brazil,C20,br_qwen3_32b_t0p0_ideology_present_ab_original,Left 1–2,0.6946683693830314,0.6472315141223476,15,10
+brazil,C20,br_qwen3_32b_t0p0_ideology_present_ab_original,Right 4–5,0.22655439380636924,0.2384433724142584,15,8
+brazil,C20,br_ministral3_14b_t0p0_ideology_present_ab_original,All,0.13444808045334827,0.11750685270001139,15,2
+brazil,C20,br_ministral3_14b_t0p0_ideology_present_ab_original,Left 1–2,0.006026019634448082,0.020098973432141343,15,2
+brazil,C20,br_ministral3_14b_t0p0_ideology_present_ab_original,Right 4–5,0.1771889217016522,0.17676718559155508,15,5
+brazil,C20,br_gemma4_12b_t0p0_ideology_present_ab_inverted,All,0.1643786415516003,0.20217768992934193,15,2
+brazil,C20,br_gemma4_12b_t0p0_ideology_present_ab_inverted,Left 1–2,0.08616010854816826,0.11159382650056686,15,4
+brazil,C20,br_gemma4_12b_t0p0_ideology_present_ab_inverted,Right 4–5,-0.4761353659509938,-0.4504704137760409,15,0
+brazil,C20,br_qwen3_32b_t0p0_ideology_present_ab_inverted,All,0.41659350307287096,0.44546747798772507,15,5
+brazil,C20,br_qwen3_32b_t0p0_ideology_present_ab_inverted,Left 1–2,0.37157793918109994,0.3999558361323851,15,6
+brazil,C20,br_qwen3_32b_t0p0_ideology_present_ab_inverted,Right 4–5,0.1431079894644425,0.10801609922550887,15,8
+brazil,C20,br_ministral3_14b_t0p0_ideology_present_ab_inverted,All,0.28286375608588077,0.22444749119398452,15,3
+brazil,C20,br_ministral3_14b_t0p0_ideology_present_ab_inverted,Left 1–2,0.2259956899992019,0.1792348429209242,15,3
+brazil,C20,br_ministral3_14b_t0p0_ideology_present_ab_inverted,Right 4–5,0.1331710431798228,0.0898910370000923,15,5
+brazil,C20,br_gemma4_12b_t0p0_ideology_ablated_ab_original,All,0.6220368744512731,0.6502949199283872,15,8
+brazil,C20,br_gemma4_12b_t0p0_ideology_ablated_ab_original,Left 1–2,0.6190837257562457,0.6471442617223473,15,7
+brazil,C20,br_gemma4_12b_t0p0_ideology_ablated_ab_original,Right 4–5,0.3499082129459654,0.3592784802574796,15,6
+brazil,C20,br_qwen3_32b_t0p0_ideology_ablated_ab_original,All,0.6767499401388779,0.6689939777970914,15,8
+brazil,C20,br_qwen3_32b_t0p0_ideology_ablated_ab_original,Left 1–2,0.6874850347194509,0.6524871388600323,15,11
+brazil,C20,br_qwen3_32b_t0p0_ideology_ablated_ab_original,Right 4–5,0.3991938702210871,0.3763835721609648,15,10
+brazil,C20,br_ministral3_14b_t0p0_ideology_ablated_ab_original,All,0.21502115092984278,0.17891538169559248,15,4
+brazil,C20,br_ministral3_14b_t0p0_ideology_ablated_ab_original,Left 1–2,0.13788011812594783,0.12186613790310476,15,3
+brazil,C20,br_ministral3_14b_t0p0_ideology_ablated_ab_original,Right 4–5,0.018517040466118607,-0.0038666248970814898,15,5
+brazil,C20,br_gemma4_12b_t0p0_ideology_ablated_ab_inverted,All,0.4576981403144705,0.47669197252660467,15,6
+brazil,C20,br_gemma4_12b_t0p0_ideology_ablated_ab_inverted,Left 1–2,0.39296831351265066,0.40743560338525114,15,4
+brazil,C20,br_gemma4_12b_t0p0_ideology_ablated_ab_inverted,Right 4–5,0.12303455982121479,0.143081663792347,15,6
+brazil,C20,br_qwen3_32b_t0p0_ideology_ablated_ab_inverted,All,0.43423258041344087,0.4993561815917366,15,6
+brazil,C20,br_qwen3_32b_t0p0_ideology_ablated_ab_inverted,Left 1–2,0.44776119402985076,0.49971333441099575,15,7
+brazil,C20,br_qwen3_32b_t0p0_ideology_ablated_ab_inverted,Right 4–5,0.11449437305451354,0.12086830436998769,15,7
+brazil,C20,br_ministral3_14b_t0p0_ideology_ablated_ab_inverted,All,0.6075903902945169,0.6053630794545521,15,6
+brazil,C20,br_ministral3_14b_t0p0_ideology_ablated_ab_inverted,Left 1–2,0.582209274483199,0.606489504082872,15,7
+brazil,C20,br_ministral3_14b_t0p0_ideology_ablated_ab_inverted,Right 4–5,0.5003990741479768,0.4936475978005035,15,8
+brazil,C10,br_gemma4_12b_t0p0_ideology_present_ab_original,All,0.6369622475856015,0.6386241534140736,15,8
+brazil,C10,br_gemma4_12b_t0p0_ideology_present_ab_original,Left 1–2,0.5593423258041346,0.5607359489835849,15,6
+brazil,C10,br_gemma4_12b_t0p0_ideology_present_ab_original,Right 4–5,0.24982041663341048,0.23448682370870558,15,7
+brazil,C10,br_qwen3_32b_t0p0_ideology_present_ab_original,All,0.6902785537552878,0.6626860453468453,15,11
+brazil,C10,br_qwen3_32b_t0p0_ideology_present_ab_original,Left 1–2,0.6904780908292762,0.6603703268770411,15,9
+brazil,C10,br_qwen3_32b_t0p0_ideology_present_ab_original,Right 4–5,0.22839013488706209,0.2293757416314701,15,9
+brazil,C10,br_ministral3_14b_t0p0_ideology_present_ab_original,All,0.13744113656317344,0.12524887263250528,15,4
+brazil,C10,br_ministral3_14b_t0p0_ideology_present_ab_original,Left 1–2,0.030289727831431086,0.002828543136268426,15,2
+brazil,C10,br_ministral3_14b_t0p0_ideology_present_ab_original,Right 4–5,0.1509697501795834,0.1738216175340124,15,6
+brazil,C10,br_gemma4_12b_t0p0_ideology_present_ab_inverted,All,0.2021310559501956,0.22678702310441726,15,4
+brazil,C10,br_gemma4_12b_t0p0_ideology_present_ab_inverted,Left 1–2,0.11361640992896482,0.123083251380705,15,3
+brazil,C10,br_gemma4_12b_t0p0_ideology_present_ab_inverted,Right 4–5,-0.48104397797110715,-0.47428872113181814,15,1
+brazil,C10,br_qwen3_32b_t0p0_ideology_present_ab_inverted,All,0.43511054353898954,0.4562935160013252,15,9
+brazil,C10,br_qwen3_32b_t0p0_ideology_present_ab_inverted,Left 1–2,0.3616010854816825,0.4105489792210587,15,5
+brazil,C10,br_qwen3_32b_t0p0_ideology_present_ab_inverted,Right 4–5,0.12259557825844045,0.09685743161861227,15,7
+brazil,C10,br_ministral3_14b_t0p0_ideology_present_ab_inverted,All,0.27619921781467,0.22947949749572888,15,5
+brazil,C10,br_ministral3_14b_t0p0_ideology_present_ab_inverted,Left 1–2,0.19750179583366592,0.15489772542378402,15,3
+brazil,C10,br_ministral3_14b_t0p0_ideology_present_ab_inverted,Right 4–5,0.09478011014446486,0.12294288472101332,15,6
+brazil,C10,br_gemma4_12b_t0p0_ideology_ablated_ab_original,All,0.6574746587916036,0.6750620804724766,15,9
+brazil,C10,br_gemma4_12b_t0p0_ideology_ablated_ab_original,Left 1–2,0.6331311357650252,0.6663025831470276,15,8
+brazil,C10,br_gemma4_12b_t0p0_ideology_ablated_ab_original,Right 4–5,0.33394524702689765,0.36060643332176495,15,7
+brazil,C10,br_qwen3_32b_t0p0_ideology_ablated_ab_original,All,0.714183095219092,0.7073974491160164,15,10
+brazil,C10,br_qwen3_32b_t0p0_ideology_ablated_ab_original,Left 1–2,0.718253651528454,0.6803868609488284,15,10
+brazil,C10,br_qwen3_32b_t0p0_ideology_ablated_ab_original,Right 4–5,0.3757283103200575,0.3583181984746792,15,9
+brazil,C10,br_ministral3_14b_t0p0_ideology_ablated_ab_original,All,0.24690717535318066,0.20267214780858245,15,5
+brazil,C10,br_ministral3_14b_t0p0_ideology_ablated_ab_original,Left 1–2,0.13803974778513853,0.12978572589735235,15,3
+brazil,C10,br_ministral3_14b_t0p0_ideology_ablated_ab_original,Right 4–5,0.041024822412004155,0.031391592718637305,15,6
+brazil,C10,br_gemma4_12b_t0p0_ideology_ablated_ab_inverted,All,0.4979248144305213,0.5044532763224787,15,8
+brazil,C10,br_gemma4_12b_t0p0_ideology_ablated_ab_inverted,Left 1–2,0.3861042381674516,0.405771678135768,15,5
+brazil,C10,br_gemma4_12b_t0p0_ideology_ablated_ab_inverted,Right 4–5,0.12095937425173597,0.14840290710819645,15,6
+brazil,C10,br_qwen3_32b_t0p0_ideology_ablated_ab_inverted,All,0.4458456381195627,0.5217545941848679,15,7
+brazil,C10,br_qwen3_32b_t0p0_ideology_ablated_ab_inverted,Left 1–2,0.3989943331470988,0.5116214939957141,15,6
+brazil,C10,br_qwen3_32b_t0p0_ideology_ablated_ab_inverted,Right 4–5,0.07191316146540028,0.09545971104783799,15,6
+brazil,C10,br_ministral3_14b_t0p0_ideology_ablated_ab_inverted,All,0.6142948359805254,0.6073568890451407,15,8
+brazil,C10,br_ministral3_14b_t0p0_ideology_ablated_ab_inverted,Left 1–2,0.5545135286136165,0.6025476472551866,15,6
+brazil,C10,br_ministral3_14b_t0p0_ideology_ablated_ab_inverted,Right 4–5,0.4729826801819779,0.48568208709927285,15,10

@@ -1,0 +1,325 @@
+analysis_country,model_label,ideology_in_prompt,display_order,metric,estimate
+France,Gemma 4-12B,True,original,dynamap_accuracy,0.7752075791358948
+France,Qwen3-32B,True,original,dynamap_accuracy,0.7710557579994202
+France,Ministral 3-14B,True,original,dynamap_accuracy,0.7301304936408997
+France,Gemma 4-12B,True,inverted,dynamap_accuracy,0.7514827847480774
+France,Qwen3-32B,True,inverted,dynamap_accuracy,0.7562277317047119
+France,Ministral 3-14B,True,inverted,dynamap_accuracy,0.7692763805389404
+France,Gemma 4-12B,False,original,dynamap_accuracy,0.8155397176742554
+France,Qwen3-32B,False,original,dynamap_accuracy,0.8173190951347351
+France,Ministral 3-14B,False,original,dynamap_accuracy,0.7586002349853516
+France,Gemma 4-12B,False,inverted,dynamap_accuracy,0.8072360754013062
+France,Qwen3-32B,False,inverted,dynamap_accuracy,0.827995240688324
+France,Ministral 3-14B,False,inverted,dynamap_accuracy,0.7924080491065979
+Brazil,Gemma 4-12B,True,original,dynamap_accuracy,0.7569124698638916
+Brazil,Qwen3-32B,True,original,dynamap_accuracy,0.7811059951782227
+Brazil,Ministral 3-14B,True,original,dynamap_accuracy,0.7419354915618896
+Brazil,Gemma 4-12B,True,inverted,dynamap_accuracy,0.7407833933830261
+Brazil,Qwen3-32B,True,inverted,dynamap_accuracy,0.7488479018211365
+Brazil,Ministral 3-14B,True,inverted,dynamap_accuracy,0.768433153629303
+Brazil,Gemma 4-12B,False,original,dynamap_accuracy,0.8248847723007202
+Brazil,Qwen3-32B,False,original,dynamap_accuracy,0.809907853603363
+Brazil,Ministral 3-14B,False,original,dynamap_accuracy,0.7546082735061646
+Brazil,Gemma 4-12B,False,inverted,dynamap_accuracy,0.8421658873558044
+Brazil,Qwen3-32B,False,inverted,dynamap_accuracy,0.768433153629303
+Brazil,Ministral 3-14B,False,inverted,dynamap_accuracy,0.7776497602462769
+Chile,Gemma 4-12B,True,original,dynamap_accuracy,0.8057500123977661
+Chile,Gemma 4-12B,True,inverted,dynamap_accuracy,0.78125
+Chile,Gemma 4-12B,False,original,dynamap_accuracy,0.8259999752044678
+Chile,Gemma 4-12B,False,inverted,dynamap_accuracy,0.8245000243186951
+Chile,Qwen3-32B,True,original,dynamap_accuracy,0.765749990940094
+Chile,Qwen3-32B,True,inverted,dynamap_accuracy,0.7559999823570251
+Chile,Qwen3-32B,False,original,dynamap_accuracy,0.8140000104904175
+Chile,Qwen3-32B,False,inverted,dynamap_accuracy,0.8262500166893005
+Chile,Ministral 3-14B,True,original,dynamap_accuracy,0.7699999809265137
+Chile,Ministral 3-14B,True,inverted,dynamap_accuracy,0.7515000104904175
+Chile,Ministral 3-14B,False,original,dynamap_accuracy,0.8217499852180481
+Chile,Ministral 3-14B,False,inverted,dynamap_accuracy,0.8182500004768372
+France,Gemma 4-12B,True,original,dynamap_lift,0.217081837736132
+France,Qwen3-32B,True,original,dynamap_lift,0.2544484033137737
+France,Ministral 3-14B,True,original,dynamap_lift,0.22953737383069794
+France,Gemma 4-12B,True,inverted,dynamap_lift,0.20047448107073462
+France,Qwen3-32B,True,inverted,dynamap_lift,0.24021349682926707
+France,Ministral 3-14B,True,inverted,dynamap_lift,0.26393830224712544
+France,Gemma 4-12B,False,original,dynamap_lift,0.25444837722348435
+France,Qwen3-32B,False,original,dynamap_lift,0.28647686500424874
+France,Ministral 3-14B,False,original,dynamap_lift,0.25088967745272994
+France,Gemma 4-12B,False,inverted,dynamap_lift,0.26156585001577826
+France,Qwen3-32B,False,inverted,dynamap_lift,0.2953736511272327
+France,Ministral 3-14B,False,inverted,dynamap_lift,0.2864768510045813
+Brazil,Gemma 4-12B,True,original,dynamap_lift,0.22926270027863815
+Brazil,Qwen3-32B,True,original,dynamap_lift,0.27764977398006596
+Brazil,Ministral 3-14B,True,original,dynamap_lift,0.23847927036373295
+Brazil,Gemma 4-12B,True,inverted,dynamap_lift,0.2223502136595238
+Brazil,Qwen3-32B,True,inverted,dynamap_lift,0.23963131195938536
+Brazil,Ministral 3-14B,True,inverted,dynamap_lift,0.24999997390580064
+Brazil,Gemma 4-12B,False,original,dynamap_lift,0.3099078137753746
+Brazil,Qwen3-32B,False,original,dynamap_lift,0.2914746738798607
+Brazil,Ministral 3-14B,False,original,dynamap_lift,0.2200460615245977
+Brazil,Gemma 4-12B,False,inverted,dynamap_lift,0.3306451500286155
+Brazil,Qwen3-32B,False,inverted,dynamap_lift,0.26612900616386514
+Brazil,Ministral 3-14B,False,inverted,dynamap_lift,0.276497686513558
+Chile,Gemma 4-12B,True,original,dynamap_lift,0.2137500123977661
+Chile,Gemma 4-12B,True,inverted,dynamap_lift,0.1987499999999999
+Chile,Gemma 4-12B,False,original,dynamap_lift,0.2614999752044677
+Chile,Gemma 4-12B,False,inverted,dynamap_lift,0.2657500243186951
+Chile,Qwen3-32B,True,original,dynamap_lift,0.219249990940094
+Chile,Qwen3-32B,True,inverted,dynamap_lift,0.1139999823570251
+Chile,Qwen3-32B,False,original,dynamap_lift,0.1735000104904175
+Chile,Qwen3-32B,False,inverted,dynamap_lift,0.1685000166893006
+Chile,Ministral 3-14B,True,original,dynamap_lift,0.2594999809265137
+Chile,Ministral 3-14B,True,inverted,dynamap_lift,0.2452500104904175
+Chile,Ministral 3-14B,False,original,dynamap_lift,0.2419999852180481
+Chile,Ministral 3-14B,False,inverted,dynamap_lift,0.2375000004768371
+France,Gemma 4-12B,True,original,human_agreement,0.7779359430604982
+France,Qwen3-32B,True,original,human_agreement,0.7019572953736655
+France,Ministral 3-14B,True,original,human_agreement,0.6338078291814947
+France,Gemma 4-12B,True,inverted,human_agreement,0.5870106761565836
+France,Qwen3-32B,True,inverted,human_agreement,0.5688018979833926
+France,Ministral 3-14B,True,inverted,human_agreement,0.6705219454329775
+France,Gemma 4-12B,False,original,human_agreement,0.732858837485172
+France,Qwen3-32B,False,original,human_agreement,0.7345195729537367
+France,Ministral 3-14B,False,original,human_agreement,0.532502965599051
+France,Gemma 4-12B,False,inverted,human_agreement,0.6495255041518386
+France,Qwen3-32B,False,inverted,human_agreement,0.6104982206405694
+France,Ministral 3-14B,False,inverted,human_agreement,0.7680901542111507
+Brazil,Gemma 4-12B,True,original,human_agreement,0.7192396313364056
+Brazil,Qwen3-32B,True,original,human_agreement,0.7057603686635945
+Brazil,Ministral 3-14B,True,original,human_agreement,0.5102534562211981
+Brazil,Gemma 4-12B,True,inverted,human_agreement,0.4467741935483871
+Brazil,Qwen3-32B,True,inverted,human_agreement,0.5392857142857143
+Brazil,Ministral 3-14B,True,inverted,human_agreement,0.5754608294930875
+Brazil,Gemma 4-12B,False,original,human_agreement,0.7092165898617512
+Brazil,Qwen3-32B,False,original,human_agreement,0.7327188940092166
+Brazil,Ministral 3-14B,False,original,human_agreement,0.4650921658986175
+Brazil,Gemma 4-12B,False,inverted,human_agreement,0.5715437788018434
+Brazil,Qwen3-32B,False,inverted,human_agreement,0.5665898617511521
+Brazil,Ministral 3-14B,False,inverted,human_agreement,0.7390552995391705
+Chile,Gemma 4-12B,True,original,human_agreement,0.570525
+Chile,Gemma 4-12B,True,inverted,human_agreement,0.5679
+Chile,Gemma 4-12B,False,original,human_agreement,0.597925
+Chile,Gemma 4-12B,False,inverted,human_agreement,0.59315
+Chile,Qwen3-32B,True,original,human_agreement,0.52295
+Chile,Qwen3-32B,True,inverted,human_agreement,0.535475
+Chile,Qwen3-32B,False,original,human_agreement,0.559425
+Chile,Qwen3-32B,False,inverted,human_agreement,0.566775
+Chile,Ministral 3-14B,True,original,human_agreement,0.545425
+Chile,Ministral 3-14B,True,inverted,human_agreement,0.547225
+Chile,Ministral 3-14B,False,original,human_agreement,0.572825
+Chile,Ministral 3-14B,False,inverted,human_agreement,0.5757
+France,Gemma 4-12B,True,original,ideology_heldout_accuracy,0.7963800904977375
+France,Qwen3-32B,True,original,ideology_heldout_accuracy,0.7918552036199095
+France,Ministral 3-14B,True,original,ideology_heldout_accuracy,0.7918552036199095
+France,Gemma 4-12B,True,inverted,ideology_heldout_accuracy,0.7737556561085973
+France,Qwen3-32B,True,inverted,ideology_heldout_accuracy,0.7737556561085973
+France,Ministral 3-14B,True,inverted,ideology_heldout_accuracy,0.8099547511312217
+France,Gemma 4-12B,False,original,ideology_heldout_accuracy,0.7918552036199095
+France,Qwen3-32B,False,original,ideology_heldout_accuracy,0.8054298642533937
+France,Ministral 3-14B,False,original,ideology_heldout_accuracy,0.7782805429864253
+France,Gemma 4-12B,False,inverted,ideology_heldout_accuracy,0.7782805429864253
+France,Qwen3-32B,False,inverted,ideology_heldout_accuracy,0.8099547511312217
+France,Ministral 3-14B,False,inverted,ideology_heldout_accuracy,0.7782805429864253
+Brazil,Gemma 4-12B,True,original,ideology_heldout_accuracy,0.7692307692307693
+Brazil,Qwen3-32B,True,original,ideology_heldout_accuracy,0.7606837606837606
+Brazil,Ministral 3-14B,True,original,ideology_heldout_accuracy,0.8461538461538461
+Brazil,Gemma 4-12B,True,inverted,ideology_heldout_accuracy,0.7692307692307693
+Brazil,Qwen3-32B,True,inverted,ideology_heldout_accuracy,0.7435897435897436
+Brazil,Ministral 3-14B,True,inverted,ideology_heldout_accuracy,0.8290598290598291
+Brazil,Gemma 4-12B,False,original,ideology_heldout_accuracy,0.7435897435897436
+Brazil,Qwen3-32B,False,original,ideology_heldout_accuracy,0.7863247863247863
+Brazil,Ministral 3-14B,False,original,ideology_heldout_accuracy,0.7692307692307693
+Brazil,Gemma 4-12B,False,inverted,ideology_heldout_accuracy,0.8034188034188035
+Brazil,Qwen3-32B,False,inverted,ideology_heldout_accuracy,0.7777777777777778
+Brazil,Ministral 3-14B,False,inverted,ideology_heldout_accuracy,0.7863247863247863
+Chile,Gemma 4-12B,True,original,ideology_heldout_accuracy,0.8538681948424068
+Chile,Gemma 4-12B,True,inverted,ideology_heldout_accuracy,0.8022922636103151
+Chile,Gemma 4-12B,False,original,ideology_heldout_accuracy,0.5673352435530086
+Chile,Gemma 4-12B,False,inverted,ideology_heldout_accuracy,0.5272206303724928
+Chile,Qwen3-32B,True,original,ideology_heldout_accuracy,0.8767908309455588
+Chile,Qwen3-32B,True,inverted,ideology_heldout_accuracy,0.7535816618911175
+Chile,Qwen3-32B,False,original,ideology_heldout_accuracy,0.5157593123209169
+Chile,Qwen3-32B,False,inverted,ideology_heldout_accuracy,0.5386819484240688
+Chile,Ministral 3-14B,True,original,ideology_heldout_accuracy,0.7736389684813754
+Chile,Ministral 3-14B,True,inverted,ideology_heldout_accuracy,0.7048710601719198
+Chile,Ministral 3-14B,False,original,ideology_heldout_accuracy,0.5616045845272206
+Chile,Ministral 3-14B,False,inverted,ideology_heldout_accuracy,0.5243553008595988
+France,Gemma 4-12B,True,original,ideology_cv10_accuracy,0.7929100333209922
+France,Qwen3-32B,True,original,ideology_cv10_accuracy,0.7915586819696409
+France,Ministral 3-14B,True,original,ideology_cv10_accuracy,0.7902813772676787
+France,Gemma 4-12B,True,inverted,ideology_cv10_accuracy,0.7970566456867827
+France,Qwen3-32B,True,inverted,ideology_cv10_accuracy,0.8052758237689744
+France,Ministral 3-14B,True,inverted,ideology_cv10_accuracy,0.8161236579044798
+France,Gemma 4-12B,False,original,ideology_cv10_accuracy,0.8011292114031839
+France,Qwen3-32B,False,original,ideology_cv10_accuracy,0.7957238059977786
+France,Ministral 3-14B,False,original,ideology_cv10_accuracy,0.8038319141058867
+France,Gemma 4-12B,False,inverted,ideology_cv10_accuracy,0.7901888189559422
+France,Qwen3-32B,False,inverted,ideology_cv10_accuracy,0.8051277304701963
+France,Ministral 3-14B,False,inverted,ideology_cv10_accuracy,0.7997593483894854
+Brazil,Gemma 4-12B,True,original,ideology_cv10_accuracy,0.7435897435897436
+Brazil,Qwen3-32B,True,original,ideology_cv10_accuracy,0.7461538461538462
+Brazil,Ministral 3-14B,True,original,ideology_cv10_accuracy,0.7974358974358975
+Brazil,Gemma 4-12B,True,inverted,ideology_cv10_accuracy,0.7461538461538462
+Brazil,Qwen3-32B,True,inverted,ideology_cv10_accuracy,0.7384615384615385
+Brazil,Ministral 3-14B,True,inverted,ideology_cv10_accuracy,0.7435897435897436
+Brazil,Gemma 4-12B,False,original,ideology_cv10_accuracy,0.7410256410256411
+Brazil,Qwen3-32B,False,original,ideology_cv10_accuracy,0.7435897435897436
+Brazil,Ministral 3-14B,False,original,ideology_cv10_accuracy,0.7538461538461538
+Brazil,Gemma 4-12B,False,inverted,ideology_cv10_accuracy,0.7435897435897436
+Brazil,Qwen3-32B,False,inverted,ideology_cv10_accuracy,0.7384615384615385
+Brazil,Ministral 3-14B,False,inverted,ideology_cv10_accuracy,0.7512820512820513
+Chile,Gemma 4-12B,True,original,ideology_cv10_accuracy,0.8776967285587975
+Chile,Gemma 4-12B,True,inverted,ideology_cv10_accuracy,0.792491895078102
+Chile,Gemma 4-12B,False,original,ideology_cv10_accuracy,0.5650456822870616
+Chile,Gemma 4-12B,False,inverted,ideology_cv10_accuracy,0.5521367521367522
+Chile,Qwen3-32B,True,original,ideology_cv10_accuracy,0.8742263483642795
+Chile,Qwen3-32B,True,inverted,ideology_cv10_accuracy,0.76570144414972
+Chile,Qwen3-32B,False,original,ideology_cv10_accuracy,0.5607206012378426
+Chile,Qwen3-32B,False,inverted,ideology_cv10_accuracy,0.5331638667845564
+Chile,Ministral 3-14B,True,original,ideology_cv10_accuracy,0.7855290303566165
+Chile,Ministral 3-14B,True,inverted,ideology_cv10_accuracy,0.6873268493958149
+Chile,Ministral 3-14B,False,original,ideology_cv10_accuracy,0.5434939581491306
+Chile,Ministral 3-14B,False,inverted,ideology_cv10_accuracy,0.5323828470380194
+France,Gemma 4-12B,True,original,left_right_fraction_human,0.41746568861957883
+France,Qwen3-32B,True,original,left_right_fraction_human,0.35574925824886383
+France,Ministral 3-14B,True,original,left_right_fraction_human,0.519505259418193
+France,Gemma 4-12B,True,inverted,left_right_fraction_human,0.13726850553493206
+France,Qwen3-32B,True,inverted,left_right_fraction_human,0.3584083674783441
+France,Ministral 3-14B,True,inverted,left_right_fraction_human,0.7045840237300252
+France,Gemma 4-12B,False,original,left_right_fraction_human,0.12430035396371618
+France,Qwen3-32B,False,original,left_right_fraction_human,0.08335866869087892
+France,Ministral 3-14B,False,original,left_right_fraction_human,0.14773562512579866
+France,Gemma 4-12B,False,inverted,left_right_fraction_human,0.04811689936839643
+France,Qwen3-32B,False,inverted,left_right_fraction_human,0.07773962977613351
+France,Ministral 3-14B,False,inverted,left_right_fraction_human,0.07902636114243154
+Brazil,Gemma 4-12B,True,original,left_right_fraction_human,0.08025010000481698
+Brazil,Qwen3-32B,True,original,left_right_fraction_human,0.11007184399932177
+Brazil,Ministral 3-14B,True,original,left_right_fraction_human,0.1882541649655188
+Brazil,Gemma 4-12B,True,inverted,left_right_fraction_human,0.011067165741538494
+Brazil,Qwen3-32B,True,inverted,left_right_fraction_human,0.0189365175908986
+Brazil,Ministral 3-14B,True,inverted,left_right_fraction_human,0.16162886669520976
+Brazil,Gemma 4-12B,False,original,left_right_fraction_human,0.04184614983383221
+Brazil,Qwen3-32B,False,original,left_right_fraction_human,0.08699761216527604
+Brazil,Ministral 3-14B,False,original,left_right_fraction_human,0.009524399806834723
+Brazil,Gemma 4-12B,False,inverted,left_right_fraction_human,0.024899186407203084
+Brazil,Qwen3-32B,False,inverted,left_right_fraction_human,0.019060825353067336
+Brazil,Ministral 3-14B,False,inverted,left_right_fraction_human,0.08300582974969135
+Chile,Gemma 4-12B,True,original,left_right_fraction_human,0.2082609318670726
+Chile,Gemma 4-12B,True,inverted,left_right_fraction_human,0.2708562630184002
+Chile,Gemma 4-12B,False,original,left_right_fraction_human,0.0039156365722946
+Chile,Gemma 4-12B,False,inverted,left_right_fraction_human,0.0068222067114108
+Chile,Qwen3-32B,True,original,left_right_fraction_human,0.4239596095492149
+Chile,Qwen3-32B,True,inverted,left_right_fraction_human,0.141522720808312
+Chile,Qwen3-32B,False,original,left_right_fraction_human,0.0088340535251561
+Chile,Qwen3-32B,False,inverted,left_right_fraction_human,0.0103483443596856
+Chile,Ministral 3-14B,True,original,left_right_fraction_human,0.1880369021374413
+Chile,Ministral 3-14B,True,inverted,left_right_fraction_human,0.2224616714498306
+Chile,Ministral 3-14B,False,original,left_right_fraction_human,0.0747907149033829
+Chile,Ministral 3-14B,False,inverted,left_right_fraction_human,0.0304723055778521
+France,Gemma 4-12B,True,original,variance_fraction_human,0.15414639983625367
+France,Qwen3-32B,True,original,variance_fraction_human,0.10324278483665066
+France,Ministral 3-14B,True,original,variance_fraction_human,0.10761468974237262
+France,Gemma 4-12B,True,inverted,variance_fraction_human,0.080722256397881
+France,Qwen3-32B,True,inverted,variance_fraction_human,0.07918243745452434
+France,Ministral 3-14B,True,inverted,variance_fraction_human,0.11431173980687064
+France,Gemma 4-12B,False,original,variance_fraction_human,0.09659226379963234
+France,Qwen3-32B,False,original,variance_fraction_human,0.09116598577615989
+France,Ministral 3-14B,False,original,variance_fraction_human,0.05017559112087176
+France,Gemma 4-12B,False,inverted,variance_fraction_human,0.08974581146422528
+France,Qwen3-32B,False,inverted,variance_fraction_human,0.07178274693817448
+France,Ministral 3-14B,False,inverted,variance_fraction_human,0.13995896799091745
+Brazil,Gemma 4-12B,True,original,variance_fraction_human,0.06478088291762973
+Brazil,Qwen3-32B,True,original,variance_fraction_human,0.031014185592811716
+Brazil,Ministral 3-14B,True,original,variance_fraction_human,0.05083611238612847
+Brazil,Gemma 4-12B,True,inverted,variance_fraction_human,0.005876432085527817
+Brazil,Qwen3-32B,True,inverted,variance_fraction_human,0.01500340572459106
+Brazil,Ministral 3-14B,True,inverted,variance_fraction_human,0.054602675187185264
+Brazil,Gemma 4-12B,False,original,variance_fraction_human,0.05851518412601695
+Brazil,Qwen3-32B,False,original,variance_fraction_human,0.04893761253879154
+Brazil,Ministral 3-14B,False,original,variance_fraction_human,0.016853370846071178
+Brazil,Gemma 4-12B,False,inverted,variance_fraction_human,0.029284305707878804
+Brazil,Qwen3-32B,False,inverted,variance_fraction_human,0.0041824020669483245
+Brazil,Ministral 3-14B,False,inverted,variance_fraction_human,0.0479795529867005
+Chile,Gemma 4-12B,True,original,variance_fraction_human,0.0143173809731233
+Chile,Gemma 4-12B,True,inverted,variance_fraction_human,0.0414007003009826
+Chile,Gemma 4-12B,False,original,variance_fraction_human,0.0146334201085148
+Chile,Gemma 4-12B,False,inverted,variance_fraction_human,0.030460172838871
+Chile,Qwen3-32B,True,original,variance_fraction_human,0.0625616818551755
+Chile,Qwen3-32B,True,inverted,variance_fraction_human,0.0124778031783759
+Chile,Qwen3-32B,False,original,variance_fraction_human,0.0361174848147292
+Chile,Qwen3-32B,False,inverted,variance_fraction_human,0.0141592957053099
+Chile,Ministral 3-14B,True,original,variance_fraction_human,0.0242344459929239
+Chile,Ministral 3-14B,True,inverted,variance_fraction_human,0.0588064101531466
+Chile,Ministral 3-14B,False,original,variance_fraction_human,0.1070333273279885
+Chile,Ministral 3-14B,False,inverted,variance_fraction_human,0.0646124215858398
+France,Gemma 4-12B,True,original,proposal_distance_correlation,0.37781596498725767
+France,Qwen3-32B,True,original,proposal_distance_correlation,0.24306098336659374
+France,Ministral 3-14B,True,original,proposal_distance_correlation,0.22952238635434116
+France,Gemma 4-12B,True,inverted,proposal_distance_correlation,0.24231236935196113
+France,Qwen3-32B,True,inverted,proposal_distance_correlation,0.1781482969589827
+France,Ministral 3-14B,True,inverted,proposal_distance_correlation,0.2527168049609765
+France,Gemma 4-12B,False,original,proposal_distance_correlation,0.3271613983860103
+France,Qwen3-32B,False,original,proposal_distance_correlation,0.3210247679637148
+France,Ministral 3-14B,False,original,proposal_distance_correlation,0.1566088190814288
+France,Gemma 4-12B,False,inverted,proposal_distance_correlation,0.2964188583283379
+France,Qwen3-32B,False,inverted,proposal_distance_correlation,0.22309893606613468
+France,Ministral 3-14B,False,inverted,proposal_distance_correlation,0.3345879839103547
+Brazil,Gemma 4-12B,True,original,proposal_distance_correlation,0.23299417064752376
+Brazil,Qwen3-32B,True,original,proposal_distance_correlation,0.16172704559956033
+Brazil,Ministral 3-14B,True,original,proposal_distance_correlation,0.11226818649960434
+Brazil,Gemma 4-12B,True,inverted,proposal_distance_correlation,0.08469604863884062
+Brazil,Qwen3-32B,True,inverted,proposal_distance_correlation,0.10481398374403077
+Brazil,Ministral 3-14B,True,inverted,proposal_distance_correlation,0.19813562417209826
+Brazil,Gemma 4-12B,False,original,proposal_distance_correlation,0.22428838243102697
+Brazil,Qwen3-32B,False,original,proposal_distance_correlation,0.20362768541868942
+Brazil,Ministral 3-14B,False,original,proposal_distance_correlation,0.053956112640856785
+Brazil,Gemma 4-12B,False,inverted,proposal_distance_correlation,0.1690184351509289
+Brazil,Qwen3-32B,False,inverted,proposal_distance_correlation,0.10195564220875317
+Brazil,Ministral 3-14B,False,inverted,proposal_distance_correlation,0.19846325185247735
+Chile,Gemma 4-12B,True,original,proposal_distance_correlation,0.0855262812448455
+Chile,Gemma 4-12B,True,inverted,proposal_distance_correlation,0.1131093793328523
+Chile,Gemma 4-12B,False,original,proposal_distance_correlation,0.0980819155704518
+Chile,Gemma 4-12B,False,inverted,proposal_distance_correlation,0.1040011944698507
+Chile,Qwen3-32B,True,original,proposal_distance_correlation,0.1017483733603481
+Chile,Qwen3-32B,True,inverted,proposal_distance_correlation,0.0480413075269876
+Chile,Qwen3-32B,False,original,proposal_distance_correlation,0.125411964326444
+Chile,Qwen3-32B,False,inverted,proposal_distance_correlation,0.0500086500511474
+Chile,Ministral 3-14B,True,original,proposal_distance_correlation,0.0958888088088911
+Chile,Ministral 3-14B,True,inverted,proposal_distance_correlation,0.1377126880404722
+Chile,Ministral 3-14B,False,original,proposal_distance_correlation,0.1787659337540732
+Chile,Ministral 3-14B,False,inverted,proposal_distance_correlation,0.1330913437789291
+France,Gemma 4-12B,True,original,spearman_rank_correlation_with_human,0.8189318702687686
+France,Qwen3-32B,True,original,spearman_rank_correlation_with_human,0.6458573512049447
+France,Ministral 3-14B,True,original,spearman_rank_correlation_with_human,0.5199041600111118
+France,Gemma 4-12B,True,inverted,spearman_rank_correlation_with_human,0.6251545246197652
+France,Qwen3-32B,True,inverted,spearman_rank_correlation_with_human,0.4314674630182651
+France,Ministral 3-14B,True,inverted,spearman_rank_correlation_with_human,0.5361205639280505
+France,Gemma 4-12B,False,original,spearman_rank_correlation_with_human,0.8003472463365511
+France,Qwen3-32B,False,original,spearman_rank_correlation_with_human,0.7081741787624141
+France,Ministral 3-14B,False,original,spearman_rank_correlation_with_human,0.4378359608306131
+France,Gemma 4-12B,False,inverted,spearman_rank_correlation_with_human,0.7224251684144731
+France,Qwen3-32B,False,inverted,spearman_rank_correlation_with_human,0.5658865198972151
+France,Ministral 3-14B,False,inverted,spearman_rank_correlation_with_human,0.7281964025279533
+Brazil,Gemma 4-12B,True,original,spearman_rank_correlation_with_human,0.6164897437943971
+Brazil,Qwen3-32B,True,original,spearman_rank_correlation_with_human,0.668648734934951
+Brazil,Ministral 3-14B,True,original,spearman_rank_correlation_with_human,0.13444808045334827
+Brazil,Gemma 4-12B,True,inverted,spearman_rank_correlation_with_human,0.1643786415516003
+Brazil,Qwen3-32B,True,inverted,spearman_rank_correlation_with_human,0.41659350307287096
+Brazil,Ministral 3-14B,True,inverted,spearman_rank_correlation_with_human,0.28286375608588077
+Brazil,Gemma 4-12B,False,original,spearman_rank_correlation_with_human,0.6220368744512731
+Brazil,Qwen3-32B,False,original,spearman_rank_correlation_with_human,0.6767499401388779
+Brazil,Ministral 3-14B,False,original,spearman_rank_correlation_with_human,0.21502115092984278
+Brazil,Gemma 4-12B,False,inverted,spearman_rank_correlation_with_human,0.4576981403144705
+Brazil,Qwen3-32B,False,inverted,spearman_rank_correlation_with_human,0.43423258041344087
+Brazil,Ministral 3-14B,False,inverted,spearman_rank_correlation_with_human,0.6075903902945169
+Chile,Gemma 4-12B,True,original,spearman_rank_correlation_with_human,0.6857225171831913
+Chile,Gemma 4-12B,True,inverted,spearman_rank_correlation_with_human,0.6966868337654855
+Chile,Gemma 4-12B,False,original,spearman_rank_correlation_with_human,0.5995061118656624
+Chile,Gemma 4-12B,False,inverted,spearman_rank_correlation_with_human,0.5980079845248384
+Chile,Qwen3-32B,True,original,spearman_rank_correlation_with_human,0.3732559575256204
+Chile,Qwen3-32B,True,inverted,spearman_rank_correlation_with_human,0.4232045108449602
+Chile,Qwen3-32B,False,original,spearman_rank_correlation_with_human,0.3927810017697657
+Chile,Qwen3-32B,False,inverted,spearman_rank_correlation_with_human,0.4239782689220891
+Chile,Ministral 3-14B,True,original,spearman_rank_correlation_with_human,0.4342182162406882
+Chile,Ministral 3-14B,True,inverted,spearman_rank_correlation_with_human,0.4274848746758859
+Chile,Ministral 3-14B,False,original,spearman_rank_correlation_with_human,0.4520969667037083
+Chile,Ministral 3-14B,False,inverted,spearman_rank_correlation_with_human,0.4455776433304522

@@ -1,0 +1,28 @@
+condition_id,family,size,temperature,model_id,model_revision,inference_engine,inference_engine_version,precision,quantization,thinking,top_p,top_k,sampling_seed
+qwen3_8b_t0p0,Qwen3,8B,0.0,Qwen/Qwen3-8B,b968826d9c46dd6066d109eabc6255188de91218,vllm,0.21.0,bfloat16,,disabled,1.0,,
+qwen3_8b_t0p2,Qwen3,8B,0.2,Qwen/Qwen3-8B,b968826d9c46dd6066d109eabc6255188de91218,vllm,0.21.0,bfloat16,,disabled,1.0,,20260904.0
+qwen3_8b_t0p7,Qwen3,8B,0.7,Qwen/Qwen3-8B,b968826d9c46dd6066d109eabc6255188de91218,vllm,0.21.0,bfloat16,,disabled,1.0,,20260904.0
+qwen3_14b_t0p0,Qwen3,14B,0.0,Qwen/Qwen3-14B,40c069824f4251a91eefaf281ebe4c544efd3e18,vllm,0.21.0,bfloat16,,disabled,1.0,,
+qwen3_14b_t0p2,Qwen3,14B,0.2,Qwen/Qwen3-14B,40c069824f4251a91eefaf281ebe4c544efd3e18,vllm,0.21.0,bfloat16,,disabled,1.0,,20260904.0
+qwen3_14b_t0p7,Qwen3,14B,0.7,Qwen/Qwen3-14B,40c069824f4251a91eefaf281ebe4c544efd3e18,vllm,0.21.0,bfloat16,,disabled,1.0,,20260904.0
+qwen3_32b_t0p0,Qwen3,32B,0.0,Qwen/Qwen3-32B,9216db5781bf21249d130ec9da846c4624c16137,vllm,0.21.0,bfloat16,,disabled,1.0,,
+qwen3_32b_t0p2,Qwen3,32B,0.2,Qwen/Qwen3-32B,9216db5781bf21249d130ec9da846c4624c16137,vllm,0.21.0,bfloat16,,disabled,1.0,,20260904.0
+qwen3_32b_t0p7,Qwen3,32B,0.7,Qwen/Qwen3-32B,9216db5781bf21249d130ec9da846c4624c16137,vllm,0.21.0,bfloat16,,disabled,1.0,,20260904.0
+gemma4_e4b_t0p0,Gemma 4,E4B,0.0,google/gemma-4-E4B-it,ee0ef6023621cff504d758262d4e04895a5af4a2,vllm,0.28.0,bfloat16,,disabled,1.0,,
+gemma4_e4b_t0p2,Gemma 4,E4B,0.2,google/gemma-4-E4B-it,ee0ef6023621cff504d758262d4e04895a5af4a2,vllm,0.28.0,bfloat16,,disabled,1.0,,20260904.0
+gemma4_e4b_t0p7,Gemma 4,E4B,0.7,google/gemma-4-E4B-it,ee0ef6023621cff504d758262d4e04895a5af4a2,vllm,0.28.0,bfloat16,,disabled,1.0,,20260904.0
+gemma4_12b_t0p0,Gemma 4,12B,0.0,google/gemma-4-12B-it,707f0a3b8a3c7ad586ed01e27eafbad8a27dd0f7,vllm,0.28.0,bfloat16,,disabled,1.0,,
+gemma4_12b_t0p2,Gemma 4,12B,0.2,google/gemma-4-12B-it,707f0a3b8a3c7ad586ed01e27eafbad8a27dd0f7,vllm,0.28.0,bfloat16,,disabled,1.0,,20260904.0
+gemma4_12b_t0p7,Gemma 4,12B,0.7,google/gemma-4-12B-it,707f0a3b8a3c7ad586ed01e27eafbad8a27dd0f7,vllm,0.28.0,bfloat16,,disabled,1.0,,20260904.0
+gemma4_31b_t0p0,Gemma 4,31B,0.0,google/gemma-4-31B-it,842da3794eaa0b77d5f08bae87a17459d91ff475,vllm,0.28.0,bfloat16,,disabled,1.0,,
+gemma4_31b_t0p2,Gemma 4,31B,0.2,google/gemma-4-31B-it,842da3794eaa0b77d5f08bae87a17459d91ff475,vllm,0.28.0,bfloat16,,disabled,1.0,,20260904.0
+gemma4_31b_t0p7,Gemma 4,31B,0.7,google/gemma-4-31B-it,842da3794eaa0b77d5f08bae87a17459d91ff475,vllm,0.28.0,bfloat16,,disabled,1.0,,20260904.0
+ministral3_3b_t0p0,Ministral 3,3B,0.0,mistralai/Ministral-3-3B-Instruct-2512,b35d4dfe56c142746f54dbd64f579faab2744308,vllm,0.28.0,bfloat16,fp8_native_weights,not_applicable_in_instruct_checkpoint,1.0,,
+ministral3_3b_t0p2,Ministral 3,3B,0.2,mistralai/Ministral-3-3B-Instruct-2512,b35d4dfe56c142746f54dbd64f579faab2744308,vllm,0.28.0,bfloat16,fp8_native_weights,not_applicable_in_instruct_checkpoint,1.0,,20260904.0
+ministral3_3b_t0p7,Ministral 3,3B,0.7,mistralai/Ministral-3-3B-Instruct-2512,b35d4dfe56c142746f54dbd64f579faab2744308,vllm,0.28.0,bfloat16,fp8_native_weights,not_applicable_in_instruct_checkpoint,1.0,,20260904.0
+ministral3_8b_t0p0,Ministral 3,8B,0.0,mistralai/Ministral-3-8B-Instruct-2512,5b26027e7b19eeb4b7352e1fed3926375dd2cb4d,vllm,0.28.0,bfloat16,fp8_native_weights,not_applicable_in_instruct_checkpoint,1.0,,
+ministral3_8b_t0p2,Ministral 3,8B,0.2,mistralai/Ministral-3-8B-Instruct-2512,5b26027e7b19eeb4b7352e1fed3926375dd2cb4d,vllm,0.28.0,bfloat16,fp8_native_weights,not_applicable_in_instruct_checkpoint,1.0,,20260904.0
+ministral3_8b_t0p7,Ministral 3,8B,0.7,mistralai/Ministral-3-8B-Instruct-2512,5b26027e7b19eeb4b7352e1fed3926375dd2cb4d,vllm,0.28.0,bfloat16,fp8_native_weights,not_applicable_in_instruct_checkpoint,1.0,,20260904.0
+ministral3_14b_t0p0,Ministral 3,14B,0.0,mistralai/Ministral-3-14B-Instruct-2512,29439f81c2be264d8d393273f99e7db9c0961120,vllm,0.28.0,bfloat16,fp8_native_weights,not_applicable_in_instruct_checkpoint,1.0,,
+ministral3_14b_t0p2,Ministral 3,14B,0.2,mistralai/Ministral-3-14B-Instruct-2512,29439f81c2be264d8d393273f99e7db9c0961120,vllm,0.28.0,bfloat16,fp8_native_weights,not_applicable_in_instruct_checkpoint,1.0,,20260904.0
+ministral3_14b_t0p7,Ministral 3,14B,0.7,mistralai/Ministral-3-14B-Instruct-2512,29439f81c2be264d8d393273f99e7db9c0961120,vllm,0.28.0,bfloat16,fp8_native_weights,not_applicable_in_instruct_checkpoint,1.0,,20260904.0

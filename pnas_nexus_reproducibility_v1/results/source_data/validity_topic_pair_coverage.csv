@@ -1,0 +1,106 @@
+topic_pair,decisions,uuids,proposal_a_count,proposal_b_count,eligible_for_display
+Democracia × Democracia,124,121,6,6,False
+Democracia × Economía,491,439,14,14,True
+Democracia × Educación,475,420,14,14,True
+Democracia × Laboral,115,113,8,8,False
+Democracia × Medio Ambiente,291,272,11,11,True
+Democracia × Modernización del Estado,1038,801,23,23,True
+Democracia × Pensiones,275,256,11,11,True
+Democracia × Política Criminal,357,332,12,12,True
+Democracia × Política Social y Ciudadanía,301,283,11,11,True
+Democracia × Política Tributaria,338,312,12,12,True
+Democracia × Reforma Congreso,115,114,8,8,False
+Democracia × Salud,579,502,16,16,True
+Democracia × Seguridad,115,112,8,8,False
+Democracia × Vivienda y Transporte,495,442,14,14,True
+Economía × Economía,280,267,8,8,True
+Economía × Educación,629,549,16,16,True
+Economía × Laboral,175,167,10,10,False
+Economía × Medio Ambiente,409,369,13,13,True
+Economía × Modernización del Estado,1246,952,25,25,True
+Economía × Pensiones,349,317,13,13,True
+Economía × Política Criminal,496,445,14,14,True
+Economía × Política Social y Ciudadanía,378,341,13,13,True
+Economía × Política Tributaria,473,425,14,14,True
+Economía × Reforma Congreso,164,161,10,10,False
+Economía × Salud,774,640,18,18,True
+Economía × Seguridad,136,134,10,10,False
+Economía × Vivienda y Transporte,643,550,16,16,True
+Educación × Educación,294,276,8,8,True
+Educación × Laboral,152,146,10,10,False
+Educación × Medio Ambiente,408,361,13,13,True
+Educación × Modernización del Estado,1354,996,25,25,True
+Educación × Pensiones,387,360,13,13,True
+Educación × Política Criminal,496,444,14,14,True
+Educación × Política Social y Ciudadanía,342,310,13,13,True
+Educación × Política Tributaria,466,415,14,14,True
+Educación × Reforma Congreso,155,151,10,10,False
+Educación × Salud,813,679,18,18,True
+Educación × Seguridad,144,141,10,10,False
+Educación × Vivienda y Transporte,674,555,16,16,True
+Laboral × Laboral,3,3,2,2,False
+Laboral × Medio Ambiente,96,92,7,7,False
+Laboral × Modernización del Estado,1242,1094,19,19,True
+Laboral × Pensiones,91,89,7,7,False
+Laboral × Política Criminal,114,111,8,8,False
+Laboral × Política Social y Ciudadanía,120,116,7,7,False
+Laboral × Política Tributaria,121,119,8,8,False
+Laboral × Reforma Congreso,36,36,4,4,False
+Laboral × Salud,202,193,12,12,True
+Laboral × Seguridad,36,36,4,4,False
+Laboral × Vivienda y Transporte,168,166,10,10,False
+Medio Ambiente × Medio Ambiente,118,115,5,5,False
+Medio Ambiente × Modernización del Estado,793,651,22,22,True
+Medio Ambiente × Pensiones,248,236,10,10,True
+Medio Ambiente × Política Criminal,306,283,11,11,True
+Medio Ambiente × Política Social y Ciudadanía,249,237,10,10,True
+Medio Ambiente × Política Tributaria,297,280,11,11,True
+Medio Ambiente × Reforma Congreso,91,91,7,7,False
+Medio Ambiente × Salud,482,423,15,15,True
+Medio Ambiente × Seguridad,101,100,7,7,False
+Medio Ambiente × Vivienda y Transporte,405,370,13,13,True
+Modernización del Estado × Modernización del Estado,1305,973,17,17,True
+Modernización del Estado × Pensiones,791,665,22,22,True
+Modernización del Estado × Política Criminal,983,783,23,23,True
+Modernización del Estado × Política Social y Ciudadanía,808,688,22,22,True
+Modernización del Estado × Política Tributaria,975,762,23,23,True
+Modernización del Estado × Reforma Congreso,340,310,19,19,True
+Modernización del Estado × Salud,1645,1143,27,27,True
+Modernización del Estado × Seguridad,306,278,19,19,True
+Modernización del Estado × Vivienda y Transporte,1239,954,25,25,True
+Pensiones × Pensiones,108,107,5,5,False
+Pensiones × Política Criminal,272,258,11,11,True
+Pensiones × Política Social y Ciudadanía,249,229,10,10,True
+Pensiones × Política Tributaria,279,265,11,11,True
+Pensiones × Reforma Congreso,98,97,7,7,False
+Pensiones × Salud,455,417,15,15,True
+Pensiones × Seguridad,105,98,7,7,False
+Pensiones × Vivienda y Transporte,374,342,13,13,True
+Política Criminal × Política Criminal,166,159,6,6,False
+Política Criminal × Política Social y Ciudadanía,300,284,11,11,True
+Política Criminal × Política Tributaria,379,344,12,12,True
+Política Criminal × Reforma Congreso,136,136,8,8,False
+Política Criminal × Salud,621,524,16,16,True
+Política Criminal × Seguridad,130,128,8,8,False
+Política Criminal × Vivienda y Transporte,472,420,14,14,True
+Política Social y Ciudadanía × Política Social y Ciudadanía,107,104,5,5,False
+Política Social y Ciudadanía × Política Tributaria,300,283,11,11,True
+Política Social y Ciudadanía × Reforma Congreso,97,95,7,7,False
+Política Social y Ciudadanía × Salud,509,448,15,15,True
+Política Social y Ciudadanía × Seguridad,110,107,7,7,False
+Política Social y Ciudadanía × Vivienda y Transporte,406,378,13,13,True
+Política Tributaria × Política Tributaria,147,140,6,6,False
+Política Tributaria × Reforma Congreso,111,108,8,8,False
+Política Tributaria × Salud,568,489,16,16,True
+Política Tributaria × Seguridad,111,111,8,8,False
+Política Tributaria × Vivienda y Transporte,444,397,14,14,True
+Reforma Congreso × Reforma Congreso,7,7,2,2,False
+Reforma Congreso × Salud,199,188,12,12,False
+Reforma Congreso × Seguridad,43,43,4,4,False
+Reforma Congreso × Vivienda y Transporte,153,148,10,10,False
+Salud × Salud,452,405,10,10,True
+Salud × Seguridad,222,210,12,12,True
+Salud × Vivienda y Transporte,784,672,18,18,True
+Seguridad × Seguridad,6,6,2,2,False
+Seguridad × Vivienda y Transporte,162,160,10,10,False
+Vivienda y Transporte × Vivienda y Transporte,261,244,8,8,True

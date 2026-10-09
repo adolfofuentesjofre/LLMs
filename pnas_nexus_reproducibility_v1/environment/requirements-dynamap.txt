@@ -1,0 +1,13 @@
+# Entorno aislado usado por DYNAMAP_human_2d.ipynb y DYNAMAP_model_2d.ipynb.
+# Intérprete: Python 3.9.16 (se instala por separado; no es un paquete pip).
+tensorflow==2.11.0
+keras==2.11.0
+numpy==1.23.1
+pandas==1.5.3
+matplotlib==3.7.0
+seaborn==0.13.2
+nbformat==5.10.4
+nbclient==0.10.2
+ipykernel==6.29.5
+# Rueda binaria compatible con macOS x86_64 / Python 3.9.
+cryptography==38.0.4

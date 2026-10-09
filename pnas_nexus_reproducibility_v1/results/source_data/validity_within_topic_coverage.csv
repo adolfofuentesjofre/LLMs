@@ -1,0 +1,15 @@
+topic_name,decisions,uuids,proposal_a_count,proposal_b_count,distinct_proposals,eligible_confirmatory
+Democracia,124,121,6,6,6,False
+Economía,280,267,8,8,8,True
+Educación,294,276,8,8,8,True
+Laboral,3,3,2,2,2,False
+Medio Ambiente,118,115,5,5,5,False
+Modernización del Estado,1305,973,17,17,17,True
+Pensiones,108,107,5,5,5,False
+Política Criminal,166,159,6,6,6,False
+Política Social y Ciudadanía,107,104,5,5,5,False
+Política Tributaria,147,140,6,6,6,False
+Reforma Congreso,7,7,2,2,2,False
+Salud,452,405,10,10,10,True
+Seguridad,6,6,2,2,2,False
+Vivienda y Transporte,261,244,8,8,8,True
